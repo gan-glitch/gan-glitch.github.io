@@ -342,6 +342,28 @@ svg.r{max-width:340px;margin:12px 0;filter:drop-shadow(0 6px 14px rgba(0,0,0,.5)
 .xo.danger{width:100%;text-align:center;padding:12px}
 *{-webkit-tap-highlight-color:transparent}
 button,a,summary,select,label,.kcell,.fb,.ch{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.tt th.oh{cursor:pointer;transition:background .15s}.tt th.oh:active{background:rgba(201,151,63,.2)}
+.tt th.hc::after{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--gold);margin-left:5px;vertical-align:middle}
+#oq{background:transparent;border:0;margin:0;padding:0;width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;color:var(--ink)}
+#oq[open]{display:flex;flex-direction:column}
+#oq::backdrop{background:rgba(5,4,3,.7);backdrop-filter:blur(6px)}
+.oqw{flex:1}
+.oqs{background:#1b1612;border-radius:24px 24px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));animation:pop .22s ease}
+.oqs textarea{min-height:140px;font-size:16px;margin:0}
+.tt th[data-hold]{cursor:pointer;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.tt th[data-hold]:active{background:rgba(201,151,63,.18)}
+.tt th[data-hc]::after{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--gold);margin-left:5px;vertical-align:middle}
+#qp{inset:auto;margin:0;padding:0;border:0;background:transparent;overflow:visible;width:min(270px,88vw);max-width:none;color:var(--ink)}
+#qp::backdrop{background:transparent}
+.qpb{background:#241d16;border:1px solid rgba(201,151,63,.4);border-radius:16px;padding:12px 14px;box-shadow:0 14px 40px rgba(0,0,0,.6);animation:pop .18s ease}
+.qph{display:flex;justify-content:space-between;align-items:center;gap:8px}.qph b{font-family:var(--serif);font-size:17px}
+.qpp{margin:8px 0 10px;color:#e6dccb;font-size:15px;white-space:pre-wrap;overflow-wrap:anywhere}.qpp.qe{color:var(--mute);font-style:italic}
+#qpX{min-height:90px;font-size:15px;margin:8px 0 10px}
+.tt th[data-hold]{touch-action:none}
+.pr .tt{font-size:15px}
+.pr .tt th,.pr .tt td{padding:4px 6px}
+.pr .tt td:not(.sk){min-width:50px;height:38px}
+.pr .tt .sk{padding:4px 0}
 /* ventana */
 dialog{background:var(--bg2);color:var(--ink);border:1px solid #3a3228;border-radius:22px;padding:0;width:min(560px,calc(100% - 24px));max-height:92vh}
 dialog::backdrop{background:rgba(5,4,3,.72)}
@@ -528,6 +550,8 @@ svg.i{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.8;stro
 <input type="file" id="exFile" accept="image/*" hidden>
 <input type="file" id="exCover" accept="image/*" hidden>
 <dialog id="xm"></dialog>
+<dialog id="qp"><div class="qpb"><div class="qph"><b id="qpT"></b><button class="xmx" data-qp="x" aria-label="Cerrar" style="width:30px;height:30px">✕</button></div><p id="qpP" class="qpp"></p><textarea id="qpX" hidden maxlength="400" placeholder="Escribe aquí el comentario"></textarea><button class="ch" id="qpE" data-qp="e">Editar</button></div></dialog>
+<dialog id="oq"><div class="oqw" data-oq="x"></div><div class="oqs"><div class="xmh"><b id="oqT"></b><button class="xmx" data-oq="x" aria-label="Cerrar">✕</button></div><p class="cmp" style="margin:0 0 8px">Lógica de esta salida</p><textarea id="oqX" maxlength="600" placeholder="Escribe aquí bajo qué lógica funciona esta salida"></textarea><div class="row" style="margin-top:10px;justify-content:flex-end"><button class="btn" data-oq="x">Guardar</button></div></div></dialog>
 <dialog id="pres"><div class="pr"><div class="prh"><b id="prT"></b><button class="ghost" id="prX">Cerrar</button></div><div id="prB"></div><div class="prf"><button class="ghost" id="prP" aria-label="Anterior">‹</button><span id="prD" class="cmp" style="margin:0"></span><button class="ghost" id="prNx" aria-label="Siguiente">›</button></div></div></dialog>
 <dialog id="vw"><div class="dl"><h2 id="vT" style="font-size:22px;overflow-wrap:anywhere"></h2><div id="vB"></div><div class="row"><button class="ghost" id="vSave">Guardar copia</button><button class="btn" id="vClose">Cerrar</button></div></div></dialog>
 
@@ -1218,13 +1242,13 @@ let exCur=null,exAdd=false,exSlide=0,exUp=null,sd;
 const saveD=()=>{clearTimeout(sd);sd=setTimeout(save,600)},uid=p=>p+Date.now().toString(36)+Math.random().toString(36).slice(2,5);
 const ddLabel=b=>!b.sel?`Todas las salidas (${b.o.length})`:b.sel.length<=3?b.sel.map(i=>b.o[i].n).join(", "):`${b.sel.length} de ${b.o.length} salidas`;
 function ttBlock(b,ed){
-  const ctrl=ed?`<div class="tc"><button class="ddb" data-a="ddn" aria-expanded="${!!b.di}">Entradas: ${b.n} ${b.di?"▴":"▾"}</button><label>Salidas<button class="ch" data-a="orem" aria-label="Quitar salida">−</button><input class="oc" type="number" min="1" max="24" data-a="oc" value="${b.o.length}"><button class="ch" data-a="oadd" aria-label="Añadir salida">+</button></label><button class="ch ${b.q?"on":""}" data-a="qm">Minitérminos</button><button class="ch ${b.np?"on":""}" data-a="nm">Nombres</button></div>`:"";
+  const ctrl=ed?`<div class="tc"><button class="ddb" data-a="ddn" aria-expanded="${!!b.di}">Entradas: ${b.n} ${b.di?"▴":"▾"}</button><label>Salidas<button class="ch" data-a="orem" aria-label="Quitar salida">−</button><input class="oc" type="number" min="1" max="24" data-a="oc" value="${b.o.length}"><button class="ch" data-a="oadd" aria-label="Añadir salida">+</button></label><button class="ch ${b.q?"on":""}" data-a="qm">Minitérminos</button><button class="ch ${b.np?"on":""}" data-a="nm">Nombres</button><button class="ch ${b.lg?"on":""}" data-a="lg">Lógica</button></div>`:"";
   const dd=`<div class="tc"><button class="ddb" data-a="dd" aria-expanded="${!!b.dd}">Mostrar: ${esc(ddLabel(b))} ${b.dd?"▴":"▾"}</button></div>`+(b.dd?`<div class="ddp"><button class="ch ${!b.sel?"on":""}" data-a="sel" data-i="all">Todas</button>${b.o.map((o,i)=>`<button class="ch ${b.sel&&b.sel.includes(i)?"on":""}" data-a="sel" data-i="${i}">${esc(o.n)}</button>`).join("")}</div>`:"");
-  return ctrl+(ed&&b.di?`<div class="ddp">${[2,3,4,5,6].map(n=>`<button class="ch ${b.n===n?"on":""}" data-a="ttn2" data-n="${n}">${n} entradas</button>`).join("")}</div>`:"")+(ed&&b.np?nmPanel(b):"")+dd+ttHTML(b,ed);
+  return ctrl+(ed&&b.di?`<div class="ddp">${[2,3,4,5,6].map(n=>`<button class="ch ${b.n===n?"on":""}" data-a="ttn2" data-n="${n}">${n} entradas</button>`).join("")}</div>`:"")+(ed&&b.np?nmPanel(b):"")+(ed&&b.lg?lgPanel(b):"")+dd+ttHTML(b,ed);
 }
 function ttHTML(b,ed){
   const rows=1<<b.n,vis=b.o.map((o,i)=>i).filter(i=>!b.sel||b.sel.includes(i)),skw=`calc(${Math.max(1,...b.iv.map(v=>v.length))}ch + 1.4em)`,sk=j=>`class="sk" style="left:calc(var(--skw)*${j})"`;
-  let h=`<table class="tt" style="--skw:${skw}"><tr>${b.iv.map((v,j)=>`<th ${sk(j)}>${ed?`<input class="ni" style="width:calc(var(--skw) - 4px)" data-a="iv" data-i="${j}" value="${esc(v)}">`:esc(v)}</th>`).join("")}${vis.map(i=>ed?`<th><input class="ni" data-a="on" data-i="${i}" value="${esc(b.o[i].n)}"></th>`:`<th>${esc(b.o[i].n)}</th>`).join("")}</tr>`;
+  let h=`<table class="tt" style="--skw:${skw}"><tr>${b.iv.map((v,j)=>`<th ${sk(j)} data-hold="i" data-i="${j}"${ed?"":' data-v="1"'}${b.ic&&b.ic[j]?' data-hc="1"':""}>${esc(v)}</th>`).join("")}${vis.map(i=>`<th data-hold="o" data-i="${i}"${ed?"":' data-v="1"'}${b.o[i].c?' data-hc="1"':""}>${esc(b.o[i].n)}</th>`).join("")}</tr>`;
   if(ed&&b.q)h+=`<tr class="mr"><td colspan="${b.n}">1 en:</td>${vis.map(i=>`<td><input class="ni" data-a="mi" data-i="${i}" placeholder="1,3" value="${b.o[i].v.map((x,r)=>x===1?r:null).filter(x=>x!==null).join(",")}"></td>`).join("")}</tr>`;
   for(let r=0;r<rows;r++)h+=`<tr>${b.iv.map((v,j)=>`<td ${sk(j)}>${(r>>(b.n-1-j))&1}</td>`).join("")}${vis.map(i=>{const on=b.o[i].v[r]===1;return ed?`<td><button class="fb ${on?"on":""}" data-a="cell" data-i="${i}" data-r="${r}">${on?1:0}</button></td>`:`<td class="${on?"hi":""}">${on?1:0}</td>`}).join("")}</tr>`;
   return `<div class="sc">${h}</table></div>`;
@@ -1253,7 +1277,7 @@ function spAst(n){
     }}
   c=c.map(spAst);return c.length>1?{t:"or",c}:c[0];
 }
-function nmParse(s){const out=[];s.trim().split(/[\s,;]+/).filter(Boolean).forEach(t=>{const m=t.match(/^(.*?)(\d+)-(?:.*?)(\d+)$/);if(m&&+m[3]>=+m[2]&&+m[3]-+m[2]<64){for(let i=+m[2];i<=+m[3];i++)out.push(m[1]+String(i).padStart(m[2].length,"0"))}else{const L=t.match(/^(.*?)([A-Za-z])-\1([A-Za-z])$/);if(L&&L[2]<=L[3]&&(L[2]>="a")===(L[3]>="a")){for(let c=L[2].charCodeAt(0);c<=L[3].charCodeAt(0);c++)out.push(L[1]+String.fromCharCode(c))}else out.push(t)}});return out}
+function nmParse(s){const out=[];s.trim().split(/[\s,;]+/).filter(Boolean).forEach(t=>{const m=t.match(/^(.*?)(\d+)-(?:.*?)(\d+)$/);if(m&&Math.abs(+m[3]-+m[2])<64){const a=+m[2],z=+m[3],st=a<=z?1:-1;for(let i=a;st>0?i<=z:i>=z;i+=st)out.push(m[1]+String(i).padStart(m[2].length,"0"))}else{const L=t.match(/^(.*?)([A-Za-z])-\1([A-Za-z])$/);if(L&&(L[2]>="a")===(L[3]>="a")){const a=L[2].charCodeAt(0),z=L[3].charCodeAt(0),st=a<=z?1:-1;for(let c=a;st>0?c<=z:c>=z;c+=st)out.push(L[1]+String.fromCharCode(c))}else out.push(t)}});return out}
 const nmPanel=b=>`<div class="ddp" style="display:grid;gap:8px;max-height:none"><label>Entradas<input data-a="nmi" value="${esc(b.iv.join(" "))}" placeholder="A B C D · X1-X4" spellcheck="false" style="font-family:var(--mono)"></label><label>Salidas<input data-a="nmo" value="${esc(b.o.map(o=>o.n).join(" "))}" placeholder="01-07 · S1-S7 · a-g" spellcheck="false" style="font-family:var(--mono)"></label><p class="cmp" style="margin:0">Separa con espacios. Para una serie usa un rango: <b>01-07</b>, <b>S1-S7</b> o <b>a-g</b>.</p><div><button class="ch on" data-a="napply">Aplicar</button></div></div>`;
 function ttResize(b,nn){const n0=b.n;if(nn===n0)return;b.o.forEach(o=>{const old=o.v;o.v=Array.from({length:1<<nn},(_,r)=>nn>n0?old[r>>(nn-n0)]:old[r<<(n0-nn)])});b.iv=Array.from({length:nn},(_,j)=>b.iv[j]||"ABCDEF"[j]);b.n=nn}
 const newER=()=>({id:uid("b"),k:"er",t:"Ecuación reducida",x:""});
@@ -1286,7 +1310,7 @@ const ciDraw=b=>{
   const used=new Set(),col=n=>{if(["nand","nor","xnor","xor"].includes(n.t))used.add(n.t.toUpperCase());if(n.t==="n")col(n.a);else if(n.c)n.c.forEach(col)};outs.forEach(o=>col(o.ast));
   return (outs.length?lgDrawMulti(outs):"")+(used.size?`<p class="cmp">Compuertas especiales en este circuito: ${[...used].join(", ")}</p>`:"")+errs.map(m=>`<p class="lgerr">${esc(m)}</p>`).join("");
 };
-function prDraw(){
+function prDrawRaw(){
   const ex=exC();if(!ex)return;
   const sl=[[-1]];ex.bl.forEach((b,i)=>{const T=sl[sl.length-1];if(b.k==="ci"&&T[0]>=0&&ex.bl[T[0]].k==="ci")T.push(i);else sl.push([i])});
   exSlide=Math.max(0,Math.min(sl.length-1,exSlide));
@@ -1319,7 +1343,7 @@ function blockHTML(b,i,ed){
   let body="";
   if(b.k==="tt")body=ttBlock(b,ed);else if(b.k==="ttOLD")body=(ed?`<div class="chs"><span class="cmp" style="margin:0 4px 0 0">Entradas</span>${[2,3,4,5,6].map(n=>`<button class="ch ${b.n===n?"on":""}" data-a="ttn" data-n="${n}">${n}</button>`).join("")}<span class="cmp" style="margin:0 4px 0 10px">Salidas ${b.o.length}</span><button class="ch" data-a="oadd" aria-label="Añadir salida">+</button><button class="ch" data-a="orem" aria-label="Quitar salida">−</button></div>`:"")+ttHTML(b,ed);
   else if(b.k==="km"){
-    const top=ed?`<div class="chs"><span class="cmp" style="margin:0 4px 0 0">Variables</span>${[2,3,4].map(n=>`<button class="ch ${b.n===n?"on":""}" data-a="kn" data-n="${n}">${n}</button>`).join("")}<input class="ni" data-a="knm" value="${esc(b.nm)}" aria-label="Nombre de la salida" style="margin-left:10px"></div><div class="chs"><button class="ch ${b.br<0?"on":""}" data-a="br" data-i="-1">Valores</button>${b.g.map((g,j)=>`<button class="ch ${b.br===j?"on":""}" data-a="br" data-i="${j}"><span class="dot" style="background:${KC[j%6]}"></span>Grupo ${j+1}</button>`).join("")}${b.g.length<6?`<button class="ch" data-a="gadd">+ grupo</button>`:""}${b.br>=0?`<button class="ch" data-a="grm">Quitar grupo</button>`:""}</div>`:`<p class="cmp" style="margin-top:0">Salida: ${esc(b.nm)}</p>`;
+    const top=ed?`<div class="chs"><span class="cmp" style="margin:0 4px 0 0">Variables</span>${[2,3,4].map(n=>`<button class="ch ${b.n===n?"on":""}" data-a="kn" data-n="${n}">${n}</button>`).join("")}<input class="ni" data-a="knm" value="${esc(b.nm)}" aria-label="Nombre de la salida" style="margin-left:10px;width:min(100%,200px);text-align:left;padding:6px 10px;font-size:15px"></div><div class="chs"><button class="ch ${b.br<0?"on":""}" data-a="br" data-i="-1">Valores</button>${b.g.map((g,j)=>`<button class="ch ${b.br===j?"on":""}" data-a="br" data-i="${j}"><span class="dot" style="background:${KC[j%6]}"></span>Grupo ${j+1}</button>`).join("")}${b.g.length<6?`<button class="ch" data-a="gadd">+ grupo</button>`:""}${b.br>=0?`<button class="ch" data-a="grm">Quitar grupo</button>`:""}</div>`:`<p class="cmp" style="margin-top:0">Salida: ${esc(b.nm)}</p>`;
     body=top+kmHTML(b,ed);
   }else if(b.k==="er")body=ed?`<textarea class="exq" data-a="al" placeholder="S1 = A + B&#10;S2 = A'C" spellcheck="false">${esc(b.x)}</textarea>`:eqHTML(b.x);
   else if(b.k==="al")body=ed?`<textarea class="exq" data-a="al" style="color:var(--ink);font-size:16px;min-height:160px" placeholder="Escribe aquí tus pasos" spellcheck="false">${esc(b.x)}</textarea>`:`<pre class="alp">${esc(b.x)}</pre>`;
@@ -1328,7 +1352,7 @@ function blockHTML(b,i,ed){
   return `<div class="${ed?"blk":""}" data-b="${i}" ${ed?"":"style=\"margin-bottom:8px\""}>${head}${body}</div>`;
 }
 const eqHTML=t=>t.split("\n").filter(l=>l.trim()).map(l=>`<div class="eql">${esc(l)}</div>`).join("");
-function exRender(){
+function exRenderRaw(){
   const L=$("#exList"),E=$("#exEd");
   if(!exCur||!exC()){
     exCur=null;E.hidden=true;L.hidden=false;
@@ -1364,6 +1388,8 @@ function exClick(e){
   else if(k==="up"&&bi>0)[ex.bl[bi-1],ex.bl[bi]]=[ex.bl[bi],ex.bl[bi-1]];
   else if(k==="dn"&&bi<ex.bl.length-1)[ex.bl[bi+1],ex.bl[bi]]=[ex.bl[bi],ex.bl[bi+1]];
   else if(k==="sel"){if(a.dataset.i==="all")b.sel=null;else{const s=b.sel||[],p=s.indexOf(i);p<0?s.push(i):s.splice(p,1);b.sel=s.length&&s.length<b.o.length?s:null}}
+  else if(k==="lg")b.lg=!b.lg;
+  else if(k==="ocm"){oqOpen(b,i);return}
   else if(k==="nm")b.np=!b.np;
   else if(k==="napply"){
     const ni=nmParse(bw.querySelector('[data-a="nmi"]').value),no=nmParse(bw.querySelector('[data-a="nmo"]').value);
@@ -1399,7 +1425,8 @@ $("#exv").addEventListener("input",e=>{
   if(k==="title")ex.t=a.value;else if(k==="desc")ex.d=a.value;else if(k==="eq")ex.eq=a.value;
   else if(!b)return;
   else if(k==="bt")b.t=a.value;else if(k==="iv")b.iv[i]=a.value;else if(k==="on")b.o[i].n=a.value;
-  else if(k==="knm")b.nm=a.value;else if(k==="al")b.x=a.value;else if(k==="ce")b.e=a.value;else return;
+  else if(k==="ict"){(b.ic=b.ic||[])[i]=a.value}
+  else if(k==="oct")b.o[i].c=a.value;else if(k==="knm")b.nm=a.value;else if(k==="al")b.x=a.value;else if(k==="ce")b.e=a.value;else return;
   ex.ts=Date.now();saveD();
 });
 $("#exv").addEventListener("change",e=>{
@@ -1494,6 +1521,66 @@ lpEl.addEventListener("pointermove",e=>{if(Math.hypot(e.clientX-lpX,e.clientY-lp
 lpEl.addEventListener("contextmenu",e=>{const c=e.target.closest(".exc2");if(c){e.preventDefault();clearTimeout(lpT);lpFired=true;setTimeout(()=>lpFired=false,800);xmOpen(c.dataset.id)}});
 lpEl.addEventListener("click",e=>{if(lpFired){lpFired=false;e.stopPropagation();e.preventDefault()}},true);
 $("#pres").addEventListener("close",()=>{if($("#exEd").hidden){exCur=null;exRender()}});
+const lgPanelOld=b=>`<div class="ddp" style="display:grid;gap:10px;max-height:340px"><p class="cmp" style="margin:0">Escribe bajo qué lógica funciona cada salida. No sale en la tabla: se ve al tocar el nombre de la salida.</p>${b.o.map((o,i)=>`<label>${esc(o.n)}<textarea data-a="oct" data-i="${i}" placeholder="Ej. Se activa cuando..." style="min-height:56px;font-size:15px;margin:4px 0 0">${esc(o.c||"")}</textarea></label>`).join("")}</div>`;
+const lgPanel=b=>`<div class="ddp" style="display:grid;gap:10px;max-height:360px"><p class="cmp" style="margin:0">Escribe qué hace cada entrada y bajo qué lógica funciona cada salida. No sale en la tabla: se ve manteniendo presionado el nombre en el encabezado.</p><b class="cmp" style="margin:0">Entradas</b>${b.iv.map((v,i)=>`<label>${esc(v)}<textarea data-a="ict" data-i="${i}" placeholder="Ej. Sensor de movimiento" style="min-height:48px;font-size:15px;margin:4px 0 0">${esc((b.ic||[])[i]||"")}</textarea></label>`).join("")}<b class="cmp" style="margin:0">Salidas</b>${b.o.map((o,i)=>`<label>${esc(o.n)}<textarea data-a="oct" data-i="${i}" placeholder="Ej. Se activa cuando..." style="min-height:48px;font-size:15px;margin:4px 0 0">${esc(o.c||"")}</textarea></label>`).join("")}</div>`;
+function exRender(){
+  const E=$("#exEd"),sc=[...E.querySelectorAll(".sc")].map(e=>e.scrollLeft),y=scrollY;
+  exRenderRaw();
+  if(!E.hidden){E.querySelectorAll(".sc").forEach((e,i)=>{if(sc[i])e.scrollLeft=sc[i]});scrollTo(0,y)}
+}
+let prLast=-1;
+function prDraw(){
+  const B=$("#prB"),same=prLast===exSlide,sc=same?[...B.querySelectorAll(".sc")].map(e=>e.scrollLeft):[],t=same?B.scrollTop:0;
+  prDrawRaw();prLast=exSlide;
+  B.querySelectorAll(".sc").forEach((e,i)=>{if(sc[i])e.scrollLeft=sc[i]});B.scrollTop=t;
+}
+$("#pres").addEventListener("close",()=>{prLast=-1});
+let qpRef=null;
+const qpGet=()=>qpRef.k==="o"?(qpRef.b.o[qpRef.i].c||""):((qpRef.b.ic||[])[qpRef.i]||"");
+function qpDraw(edit){
+  const R=qpRef,txt=qpGet();
+  $("#qpT").textContent=(R.k==="o"?R.b.o[R.i].n+" · lógica":R.b.iv[R.i]+" · entrada");
+  $("#qpP").hidden=edit;$("#qpP").textContent=txt||"Sin comentario todavía.";$("#qpP").classList.toggle("qe",!txt);
+  $("#qpX").hidden=!edit;if(edit){$("#qpX").value=txt;setTimeout(()=>$("#qpX").focus(),30)}
+  $("#qpE").textContent=edit?"Guardar":(txt?"Editar":"Añadir");$("#qpE").dataset.m=edit?"s":"e";
+}
+function qpOpen(h){
+  const ex=exC(),bw=h.closest("[data-b]");if(!ex||!bw)return;
+  qpRef={b:ex.bl[+bw.dataset.b],k:h.dataset.hold,i:+h.dataset.i,h};
+  qpDraw(false);const d=$("#qp");if(!d.open)d.showModal();
+  const r=h.getBoundingClientRect(),w=d.offsetWidth,x=Math.max(8,Math.min(innerWidth-w-8,r.left+r.width/2-w/2)),y=r.bottom+8;
+  d.style.left=x+"px";d.style.top=y+"px";
+  requestAnimationFrame(()=>{const hh=d.offsetHeight;if(y+hh>innerHeight-8)d.style.top=Math.max(8,r.top-hh-8)+"px"});
+  if(navigator.vibrate)navigator.vibrate(10);
+}
+$("#qp").addEventListener("click",e=>{
+  const a=e.target.closest("[data-qp]");
+  if(a&&a.dataset.qp==="x"){$("#qp").close();return}
+  if(a&&a.id==="qpE"){
+    if(a.dataset.m==="s"){const v=$("#qpX").value.trim();if(qpRef.k==="o")qpRef.b.o[qpRef.i].c=v;else(qpRef.b.ic=qpRef.b.ic||[])[qpRef.i]=v;saveD();qpRef.h.toggleAttribute("data-hc",!!v);qpDraw(false)}
+    else qpDraw(true);
+    return;
+  }
+  if(e.target===$("#qp"))$("#qp").close();
+});
+$("#qp").addEventListener("close",()=>{});
+function holdBind(el){
+  let t,x0=0,y0=0,fired=false;
+  el.addEventListener("pointerdown",e=>{const h=e.target.closest("[data-hold]");if(!h)return;x0=e.clientX;y0=e.clientY;clearTimeout(t);t=setTimeout(()=>{fired=true;setTimeout(()=>fired=false,700);qpOpen(h)},380)});
+  el.addEventListener("pointermove",e=>{if(Math.hypot(e.clientX-x0,e.clientY-y0)>10)clearTimeout(t)});
+  ["pointerup","pointercancel","pointerleave"].forEach(n=>el.addEventListener(n,()=>clearTimeout(t)));
+  el.addEventListener("contextmenu",e=>{const h=e.target.closest("[data-hold]");if(!h)return;e.preventDefault();clearTimeout(t);if(!fired&&!$("#qp").open){fired=true;setTimeout(()=>fired=false,700);qpOpen(h)}});
+  el.addEventListener("touchstart",e=>{const h=e.target.closest("[data-hold]");if(!h)return;const p=e.touches[0];x0=p.clientX;y0=p.clientY;clearTimeout(t);t=setTimeout(()=>{fired=true;setTimeout(()=>fired=false,700);if(!$("#qp").open)qpOpen(h)},380)},{passive:true});
+  el.addEventListener("touchmove",e=>{const p=e.touches[0];if(Math.hypot(p.clientX-x0,p.clientY-y0)>14)clearTimeout(t)},{passive:true});
+  ["touchend","touchcancel"].forEach(n=>el.addEventListener(n,()=>clearTimeout(t),{passive:true}));
+  el.addEventListener("click",e=>{const h=e.target.closest("[data-hold]");if(!h)return;if(fired){fired=false;e.stopPropagation();return}if(h.dataset.v)qpOpen(h)},true);
+}
+holdBind($("#exv"));holdBind($("#pres"));
+let oqRef=null;
+function oqOpen(b,i){oqRef={b,i};$("#oqT").textContent=b.o[i].n+" · lógica";$("#oqX").value=b.o[i].c||"";$("#oq").showModal()}
+$("#oqX").addEventListener("input",e=>{if(oqRef){oqRef.b.o[oqRef.i].c=e.target.value;saveD()}});
+$("#oq").addEventListener("click",e=>{if(e.target.closest("[data-oq]"))$("#oq").close()});
+$("#oq").addEventListener("close",()=>{save();if($("#pres").open)prDraw();else exRender()});
 $("#prX").onclick=()=>$("#pres").close();$("#prP").onclick=()=>prGo(-1);$("#prNx").onclick=()=>prGo(1);
 $("#pres").addEventListener("keydown",e=>{if(e.key==="ArrowRight")prGo(1);else if(e.key==="ArrowLeft")prGo(-1)});
 exRender();
