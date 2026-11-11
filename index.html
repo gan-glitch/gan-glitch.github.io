@@ -280,7 +280,7 @@ svg.r{max-width:340px;margin:12px 0;filter:drop-shadow(0 6px 14px rgba(0,0,0,.5)
 .prf{display:flex;justify-content:space-between;align-items:center}.prf .ghost{padding:8px 26px;font-size:20px}
 .prh2{font-family:var(--serif);font-size:clamp(34px,7vw,56px);margin:0 0 22px;line-height:1.1}
 .pr .tt{font-size:clamp(16px,3.4vw,24px)}.pr .tt th,.pr .tt td{padding:8px 16px}
-.pr .eql{font-size:clamp(22px,5vw,38px)}
+.pr .eql{font-size:20px}
 .pr .kcell{width:min(90px,19vw);height:min(90px,19vw);font-size:28px}
 .pr .alp{font-size:clamp(18px,3.6vw,26px)}
 .tc{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 10px}
@@ -364,6 +364,23 @@ button,a,summary,select,label,.kcell,.fb,.ch{-webkit-tap-highlight-color:transpa
 .pr .tt th,.pr .tt td{padding:4px 6px}
 .pr .tt td:not(.sk){min-width:50px;height:38px}
 .pr .tt .sk{padding:4px 0}
+.pj{display:block;columns:430px;column-gap:26px}
+.pjc{min-width:0;break-inside:avoid;margin-bottom:22px}
+#pres{background:radial-gradient(900px 480px at 85% -10%,rgba(201,151,63,.13),transparent),var(--bg)}
+.pic{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--ink);font-size:16px;display:grid;place-items:center}
+.pic:hover{border-color:var(--gold);color:var(--gold2)}
+.prh{gap:8px}
+.prp{height:3px;background:var(--line);border-radius:3px;margin:12px 0 0;overflow:hidden}
+.prp i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold2));transition:width .35s}
+#prB.sw{animation:swin .35s ease}
+@keyframes swin{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+#prB>.pjc,#prB>.pj{max-width:1180px;margin:0 auto}
+.prE{font:500 12.5px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:0 0 8px}
+.prs{color:var(--mute);font-size:clamp(15px,1.6vw,19px);margin:-8px 0 22px;max-width:60ch}
+.eqr{display:flex;gap:6px 16px;align-items:baseline;flex-wrap:wrap;padding:12px 18px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.025);margin-bottom:10px}
+.eqn{font:700 clamp(16px,1.7vw,22px) var(--mono);color:var(--gold2);min-width:3.2ch}
+.eqb{font:400 clamp(15px,1.6vw,22px)/2 var(--mono);color:#efe6d6;flex:1 1 280px;min-width:0}
+.tm{white-space:nowrap;display:inline-block}.pl{color:var(--gold);margin:0 .55em;opacity:.85}.lt{margin-right:.1em}
 /* ventana */
 dialog{background:var(--bg2);color:var(--ink);border:1px solid #3a3228;border-radius:22px;padding:0;width:min(560px,calc(100% - 24px));max-height:92vh}
 dialog::backdrop{background:rgba(5,4,3,.72)}
@@ -552,7 +569,7 @@ svg.i{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.8;stro
 <dialog id="xm"></dialog>
 <dialog id="qp"><div class="qpb"><div class="qph"><b id="qpT"></b><button class="xmx" data-qp="x" aria-label="Cerrar" style="width:30px;height:30px">✕</button></div><p id="qpP" class="qpp"></p><textarea id="qpX" hidden maxlength="400" placeholder="Escribe aquí el comentario"></textarea><button class="ch" id="qpE" data-qp="e">Editar</button></div></dialog>
 <dialog id="oq"><div class="oqw" data-oq="x"></div><div class="oqs"><div class="xmh"><b id="oqT"></b><button class="xmx" data-oq="x" aria-label="Cerrar">✕</button></div><p class="cmp" style="margin:0 0 8px">Lógica de esta salida</p><textarea id="oqX" maxlength="600" placeholder="Escribe aquí bajo qué lógica funciona esta salida"></textarea><div class="row" style="margin-top:10px;justify-content:flex-end"><button class="btn" data-oq="x">Guardar</button></div></div></dialog>
-<dialog id="pres"><div class="pr"><div class="prh"><b id="prT"></b><button class="ghost" id="prX">Cerrar</button></div><div id="prB"></div><div class="prf"><button class="ghost" id="prP" aria-label="Anterior">‹</button><span id="prD" class="cmp" style="margin:0"></span><button class="ghost" id="prNx" aria-label="Siguiente">›</button></div></div></dialog>
+<dialog id="pres"><div class="pr"><div class="prh"><b id="prT"></b><button class="pic" id="prFS" aria-label="Pantalla completa" title="Pantalla completa">⛶</button><button class="pic" id="prX" aria-label="Cerrar">✕</button></div><div class="prp"><i id="prBar"></i></div><div id="prB"></div><div class="prf"><button class="ghost" id="prP" aria-label="Anterior">‹</button><span id="prD" class="cmp" style="margin:0"></span><button class="ghost" id="prNx" aria-label="Siguiente">›</button></div></div></dialog>
 <dialog id="vw"><div class="dl"><h2 id="vT" style="font-size:22px;overflow-wrap:anywhere"></h2><div id="vB"></div><div class="row"><button class="ghost" id="vSave">Guardar copia</button><button class="btn" id="vClose">Cerrar</button></div></div></dialog>
 
 <dialog id="dlg"><div class="dl">
@@ -758,7 +775,7 @@ function lgParse(src){
   function and(){const c=[not()];for(;;){if(pk()==="*"){i++;c.push(not())}else if(pk()&&/[A-Z(!]/.test(pk()))c.push(not());else break}return c.length>1?{t:"and",c}:c[0]}
   function not(){if(pk()==="!"){i++;return{t:"n",a:not()}}let a=atom();while(pk()==="'"){i++;a={t:"n",a}}return a}
   function atom(){const c=pk();if(c==="("){i++;const a=or();if(pk()!==")")throw Error("Falta cerrar un paréntesis");i++;return a}
-    if(c&&/[A-Z]/.test(c)){i++;return{t:"v",n:c}}throw Error(c?"No entiendo el símbolo «"+c+"»":"La ecuación está incompleta")}
+    if(c&&/[A-Z]/.test(c)){let nm=c;i++;while(s[i]&&s[i]>="0"&&s[i]<="9"){nm+=s[i];i++}return{t:"v",n:nm}}throw Error(c?"No entiendo el símbolo «"+c+"»":"La ecuación está incompleta")}
   const r=or();if(i<s.length)throw Error("No entiendo «"+s[i]+"»");return r;
 }
 const lgKids=n=>n.t==="n"?[n.a]:n.c;
@@ -1282,7 +1299,7 @@ const nmPanel=b=>`<div class="ddp" style="display:grid;gap:8px;max-height:none">
 function ttResize(b,nn){const n0=b.n;if(nn===n0)return;b.o.forEach(o=>{const old=o.v;o.v=Array.from({length:1<<nn},(_,r)=>nn>n0?old[r>>(nn-n0)]:old[r<<(n0-nn)])});b.iv=Array.from({length:nn},(_,j)=>b.iv[j]||"ABCDEF"[j]);b.n=nn}
 const newER=()=>({id:uid("b"),k:"er",t:"Ecuación reducida",x:""});
 function lgDrawMulti(L){
-  const vs=[...new Set(L.flatMap(o=>lgVars(o.ast)))].sort(),GW=96,RH=30,TOP=46,RX=v=>34+vs.indexOf(v)*26,LX=RX(vs[vs.length-1])+34,last={};
+  const vs=[...new Set(L.flatMap(o=>lgVars(o.ast)))].sort((p,q)=>p[0]<q[0]?-1:p[0]>q[0]?1:(+p.slice(1)||0)-(+q.slice(1)||0)),GW=96,RH=30,TOP=46,SP=Math.max(26,Math.max(...[...new Set(L.flatMap(o=>lgVars(o.ast)))].map(v=>v.length))*9+10),RX=v=>34+vs.indexOf(v)*SP,LX=RX(vs[vs.length-1])+34,last={};
   let rows=0,sh="",dots="";
   const dep=n=>n.t==="v"?0:1+Math.max(...lgKids(n).map(dep)),D=Math.max(1,...L.map(o=>dep(o.ast)));
   function lay(n,d){
@@ -1310,13 +1327,37 @@ const ciDraw=b=>{
   const used=new Set(),col=n=>{if(["nand","nor","xnor","xor"].includes(n.t))used.add(n.t.toUpperCase());if(n.t==="n")col(n.a);else if(n.c)n.c.forEach(col)};outs.forEach(o=>col(o.ast));
   return (outs.length?lgDrawMulti(outs):"")+(used.size?`<p class="cmp">Compuertas especiales en este circuito: ${[...used].join(", ")}</p>`:"")+errs.map(m=>`<p class="lgerr">${esc(m)}</p>`).join("");
 };
+const eqNm=l=>{const p=l.indexOf("=");return p>0?l.slice(0,p).trim():"F"};
+function eqFmt(r){
+  const s=r.replace(/[´’']/g,"′"),parts=[];let d=0,cur="";
+  for(const c of s){if(c==="(")d++;if(c===")")d--;if(c==="+"&&d===0){parts.push(cur);cur=""}else cur+=c}
+  parts.push(cur);
+  const lit=t=>t.trim().split(/([A-Za-z]\d*′?)/).map((x,i)=>i%2?`<span class="lt">${esc(x)}</span>`:esc(x)).join("");
+  return parts.map(t=>`<span class="tm">${lit(t)}</span>`).join('<span class="pl">+</span>');
+}
+function eqRow(l){const p=l.indexOf("="),rhs=p>0?l.slice(p+1):l;return `<div class="eqr"><span class="eqn">${esc(eqNm(l))}${p>0?" =":""}</span><span class="eqb">${eqFmt(rhs)}</span></div>`}
+function eqHTML(t,st){
+  const L=t.split("\n").map(s=>s.trim()).filter(Boolean);if(!L.length)return"";
+  const sel=st&&st.es&&st.es.length&&st.es.length<L.length?st.es.filter(i=>i<L.length):null,vis=L.map((l,i)=>i).filter(i=>!sel||sel.includes(i));
+  let h="";
+  if(L.length>1&&st){
+    const lab=!sel?`Todas las ecuaciones (${L.length})`:sel.length<=3?sel.map(i=>eqNm(L[i])).join(", "):`${sel.length} de ${L.length} ecuaciones`;
+    h+=`<div class="tc"><button class="ddb" data-a="eqdd" aria-expanded="${!!st.eo}">Mostrar: ${esc(lab)} ${st.eo?"▴":"▾"}</button></div>`+(st.eo?`<div class="ddp"><button class="ch ${!sel?"on":""}" data-a="eqsel" data-i="all">Todas</button>${L.map((l,i)=>`<button class="ch ${sel&&sel.includes(i)?"on":""}" data-a="eqsel" data-i="${i}">${esc(eqNm(l))}</button>`).join("")}</div>`:"");
+  }
+  return h+vis.map(i=>eqRow(L[i])).join("");
+}
+function joinChip(b,i){
+  const ex=exC(),pv=ex&&i>0?ex.bl[i-1]:null,j=b.j===undefined?(b.k==="ci"&&pv&&pv.k==="ci"):b.j;
+  return `<div class="chs" style="margin:-4px 0 10px"><button class="ch ${j?"on":""}" data-a="join" aria-pressed="${!!j}">${i===0?"Mostrar junto a las ecuaciones":"Mostrar junto al anterior"}</button></div>`;
+}
 function prDrawRaw(){
   const ex=exC();if(!ex)return;
-  const sl=[[-1]];ex.bl.forEach((b,i)=>{const T=sl[sl.length-1];if(b.k==="ci"&&T[0]>=0&&ex.bl[T[0]].k==="ci")T.push(i);else sl.push([i])});
+  const sl=[[-1]];ex.bl.forEach((b,i)=>{const T=sl[sl.length-1],pv=i>0?ex.bl[i-1]:null,j=b.j===undefined?(b.k==="ci"&&pv&&pv.k==="ci"):b.j;if(j)T.push(i);else sl.push([i])});
   exSlide=Math.max(0,Math.min(sl.length-1,exSlide));
-  $("#prT").textContent=ex.t;$("#prD").textContent=(exSlide+1)+" / "+sl.length;
+  $("#prT").textContent=ex.t;$("#prD").textContent=(exSlide+1)+" / "+sl.length;$("#prBar").style.width=((exSlide+1)/sl.length*100)+"%";
   const s=sl[exSlide];
-  $("#prB").innerHTML=s[0]<0?`<h2 class="prh2">${esc(ex.t)}</h2>${eqHTML(ex.eq)}`:s.map(i=>blockHTML(ex.bl[i],i,false)).join("");
+  const parts=[];if(s[0]<0)parts.push(`<div class="pjc"><p class="prE">Presentación</p><h2 class="prh2">${esc(ex.t)}</h2>${ex.d?`<p class="prs">${esc(ex.d)}</p>`:""}${eqHTML(ex.eq,ex)}</div>`);s.filter(i=>i>=0).forEach(i=>parts.push(`<div class="pjc">${blockHTML(ex.bl[i],i,false)}</div>`));
+  $("#prB").innerHTML=parts.length>1?`<div class="pj">${parts.join("")}</div>`:parts.join("");
 }
 const newTT=()=>({id:uid("b"),k:"tt",t:"Tabla de verdad",n:3,iv:["A","B","C"],o:[{n:"S1",v:Array(8).fill(0)}],sel:null});
 const newKM=()=>({id:uid("b"),k:"km",t:"Mapa de Karnaugh",n:3,nm:"S1",v:Array(8).fill(0),g:[],br:-1});
@@ -1345,13 +1386,13 @@ function blockHTML(b,i,ed){
   else if(b.k==="km"){
     const top=ed?`<div class="chs"><span class="cmp" style="margin:0 4px 0 0">Variables</span>${[2,3,4].map(n=>`<button class="ch ${b.n===n?"on":""}" data-a="kn" data-n="${n}">${n}</button>`).join("")}<input class="ni" data-a="knm" value="${esc(b.nm)}" aria-label="Nombre de la salida" style="margin-left:10px;width:min(100%,200px);text-align:left;padding:6px 10px;font-size:15px"></div><div class="chs"><button class="ch ${b.br<0?"on":""}" data-a="br" data-i="-1">Valores</button>${b.g.map((g,j)=>`<button class="ch ${b.br===j?"on":""}" data-a="br" data-i="${j}"><span class="dot" style="background:${KC[j%6]}"></span>Grupo ${j+1}</button>`).join("")}${b.g.length<6?`<button class="ch" data-a="gadd">+ grupo</button>`:""}${b.br>=0?`<button class="ch" data-a="grm">Quitar grupo</button>`:""}</div>`:`<p class="cmp" style="margin-top:0">Salida: ${esc(b.nm)}</p>`;
     body=top+kmHTML(b,ed);
-  }else if(b.k==="er")body=ed?`<textarea class="exq" data-a="al" placeholder="S1 = A + B&#10;S2 = A'C" spellcheck="false">${esc(b.x)}</textarea>`:eqHTML(b.x);
+  }else if(b.k==="er")body=ed?`<textarea class="exq" data-a="al" placeholder="S1 = A + B&#10;S2 = A'C" spellcheck="false">${esc(b.x)}</textarea>`:eqHTML(b.x,b);
   else if(b.k==="al")body=ed?`<textarea class="exq" data-a="al" style="color:var(--ink);font-size:16px;min-height:160px" placeholder="Escribe aquí tus pasos" spellcheck="false">${esc(b.x)}</textarea>`:`<pre class="alp">${esc(b.x)}</pre>`;
-  else body=(ed?`<textarea class="exq" data-a="ce" style="min-height:90px;font-size:16px" placeholder="Una ecuación por línea (todas comparten las entradas)&#10;S1 = A'B + C&#10;S2 = AB" spellcheck="false">${esc(b.e)}</textarea><div class="chs" style="margin-top:10px"><button class="ch ${b.nsp?"":"on"}" data-a="spt">Compuertas especiales</button><button class="ch" data-a="cup">Subir imagen</button>${b.img?`<button class="ch" data-a="cimg">Quitar imagen</button>`:""}</div>`:"")+ciDraw(b)+(b.img?`<img class="ciimg" src="/_blob/${b.img}" alt="Circuito">`:"");
+  else body=(ed?`<textarea class="exq" data-a="ce" style="min-height:90px;font-size:16px" placeholder="Una ecuación por línea (todas comparten las entradas)&#10;O0 = I3(I1+I0)&#10;O1 = I2'I0" spellcheck="false">${esc(b.e)}</textarea><div class="chs" style="margin-top:10px"><button class="ch ${b.nsp?"":"on"}" data-a="spt">Compuertas especiales</button><button class="ch" data-a="cup">Subir imagen</button>${b.img?`<button class="ch" data-a="cimg">Quitar imagen</button>`:""}</div>`:"")+ciDraw(b)+(b.img?`<img class="ciimg" src="/_blob/${b.img}" alt="Circuito">`:"");
   const head=ed?`<div class="bh"><input class="bt2" data-a="bt" value="${esc(b.t)}" aria-label="Título del bloque"><span class="bc"><button class="ic2" data-a="up" aria-label="Subir">↑</button><button class="ic2" data-a="dn" aria-label="Bajar">↓</button><button class="ic2" data-a="rm" aria-label="Eliminar bloque">✕</button></span></div>`:`<h3 class="bt3">${esc(b.t)}</h3>`;
-  return `<div class="${ed?"blk":""}" data-b="${i}" ${ed?"":"style=\"margin-bottom:8px\""}>${head}${body}</div>`;
+  return `<div class="${ed?"blk":""}" data-b="${i}" ${ed?"":"style=\"margin-bottom:8px\""}>${head}${ed?joinChip(b,i):""}${body}</div>`;
 }
-const eqHTML=t=>t.split("\n").filter(l=>l.trim()).map(l=>`<div class="eql">${esc(l)}</div>`).join("");
+const eqHTMLold=t=>t.split("\n").filter(l=>l.trim()).map(l=>`<div class="eql">${esc(l)}</div>`).join("");
 function exRenderRaw(){
   const L=$("#exList"),E=$("#exEd");
   if(!exCur||!exC()){
@@ -1380,6 +1421,8 @@ function exClick(e){
   else if(k==="back"){exCur=null;exAdd=false}
   else if(k==="plus")exAdd=!exAdd;
   else if(!ex)return;
+  else if(k==="eqdd"){const s=bw?b:ex;if(s)s.eo=!s.eo}
+  else if(k==="eqsel"){const s=bw?b:ex;if(!s)return;const n=(s===ex?ex.eq:s.x).split("\n").filter(l=>l.trim()).length,sel=s.es||[];if(a.dataset.i==="all")s.es=null;else{const p=sel.indexOf(i);p<0?sel.push(i):sel.splice(p,1);s.es=sel.length&&sel.length<n?sel:null}}
   else if(k==="add"){ex.bl.push({tt:newTT,km:newKM,al:newAL,er:newER,ci:newCI}[a.dataset.kk]());exAdd=false}
   else if(k==="del"){if(!arm(a,"Eliminar ejercicio"))return;S.ex=EX().filter(x=>x!==ex);exCur=null}
   else if(k==="pres"){exSlide=0;prDraw();$("#pres").showModal();return}
@@ -1388,6 +1431,7 @@ function exClick(e){
   else if(k==="up"&&bi>0)[ex.bl[bi-1],ex.bl[bi]]=[ex.bl[bi],ex.bl[bi-1]];
   else if(k==="dn"&&bi<ex.bl.length-1)[ex.bl[bi+1],ex.bl[bi]]=[ex.bl[bi],ex.bl[bi+1]];
   else if(k==="sel"){if(a.dataset.i==="all")b.sel=null;else{const s=b.sel||[],p=s.indexOf(i);p<0?s.push(i):s.splice(p,1);b.sel=s.length&&s.length<b.o.length?s:null}}
+  else if(k==="join"){const pv=ex.bl[bi-1],cur=b.j===undefined?(b.k==="ci"&&pv&&pv.k==="ci"):b.j;b.j=!cur}
   else if(k==="lg")b.lg=!b.lg;
   else if(k==="ocm"){oqOpen(b,i);return}
   else if(k==="nm")b.np=!b.np;
@@ -1531,7 +1575,7 @@ function exRender(){
 let prLast=-1;
 function prDraw(){
   const B=$("#prB"),same=prLast===exSlide,sc=same?[...B.querySelectorAll(".sc")].map(e=>e.scrollLeft):[],t=same?B.scrollTop:0;
-  prDrawRaw();prLast=exSlide;
+  prDrawRaw();prFit();if(!same){B.classList.remove("sw");void B.offsetWidth;B.classList.add("sw")}prLast=exSlide;
   B.querySelectorAll(".sc").forEach((e,i)=>{if(sc[i])e.scrollLeft=sc[i]});B.scrollTop=t;
 }
 $("#pres").addEventListener("close",()=>{prLast=-1});
@@ -1576,6 +1620,15 @@ function holdBind(el){
   el.addEventListener("click",e=>{const h=e.target.closest("[data-hold]");if(!h)return;if(fired){fired=false;e.stopPropagation();return}if(h.dataset.v)qpOpen(h)},true);
 }
 holdBind($("#exv"));holdBind($("#pres"));
+function prFit(){
+  document.querySelectorAll("#prB .eql").forEach(el=>{
+    const W=el.clientWidth||innerWidth-36,n=(el.textContent||"").length||1,L=n>220?3:2;
+    el.style.fontSize=Math.max(12,Math.min(30,W*L/(n*.6))).toFixed(1)+"px";
+  });
+}
+if(window.ResizeObserver)new ResizeObserver(()=>prFit()).observe($("#prB"));
+$("#prFS").onclick=()=>{const d=$("#pres");if(document.fullscreenElement){document.exitFullscreen();return}(d.requestFullscreen?d.requestFullscreen():Promise.reject()).catch(()=>toast("Aquí el navegador no permite pantalla completa. En PC prueba con F11."))};
+new MutationObserver(()=>{const d=$("#pres");if(d.open&&!document.fullscreenElement&&d.requestFullscreen)d.requestFullscreen().catch(()=>{});if(!d.open&&document.fullscreenElement)document.exitFullscreen().catch(()=>{})}).observe($("#pres"),{attributes:true,attributeFilter:["open"]});
 let oqRef=null;
 function oqOpen(b,i){oqRef={b,i};$("#oqT").textContent=b.o[i].n+" · lógica";$("#oqX").value=b.o[i].c||"";$("#oq").showModal()}
 $("#oqX").addEventListener("input",e=>{if(oqRef){oqRef.b.o[oqRef.i].c=e.target.value;saveD()}});
