@@ -381,6 +381,129 @@ button,a,summary,select,label,.kcell,.fb,.ch{-webkit-tap-highlight-color:transpa
 .eqn{font:700 clamp(16px,1.7vw,22px) var(--mono);color:var(--gold2);min-width:3.2ch}
 .eqb{font:400 clamp(15px,1.6vw,22px)/2 var(--mono);color:#efe6d6;flex:1 1 280px;min-width:0}
 .tm{white-space:nowrap;display:inline-block}.pl{color:var(--gold);margin:0 .55em;opacity:.85}.lt{margin-right:.1em}
+.zenx{display:none;position:fixed;top:calc(10px + env(safe-area-inset-top,0px));right:12px;z-index:5;opacity:.65}
+#pres.zen .zenx{display:grid}#pres.zen .prh,#pres.zen .prp{display:none}
+#pres.zen .pr{padding-top:calc(12px + env(safe-area-inset-top,0px))}
+.prm{position:fixed;left:50%;bottom:92px;transform:translateX(-50%);width:max-content;max-width:min(92vw,520px);background:#241d16;border:1px solid rgba(201,151,63,.45);border-radius:14px;padding:12px 16px;font-size:14px;line-height:1.45;z-index:6;box-shadow:0 12px 30px rgba(0,0,0,.5)}
+/* presentación: bloques, circuitos, mapas y pantalla dividida */
+#pres::before{content:"";position:fixed;inset:0;background:radial-gradient(520px 320px at 8% 92%,rgba(196,98,45,.14),transparent),radial-gradient(640px 380px at 92% 6%,rgba(201,151,63,.15),transparent);pointer-events:none}
+.pr{position:relative}
+.pjc.cd{background:linear-gradient(145deg,rgba(255,255,255,.05),rgba(255,255,255,.01));border:1px solid rgba(201,151,63,.2);border-radius:22px;padding:20px;box-shadow:0 22px 55px rgba(0,0,0,.4)}
+.pr .bt3{font-size:clamp(22px,2.2vw,30px);display:flex;align-items:center;gap:12px}
+.pr .bt3::before{content:"";width:6px;height:28px;border-radius:3px;background:linear-gradient(var(--gold2),var(--ember))}
+.pr .sc{max-height:calc(100dvh - 250px)}
+.pr .tt tr:first-child th{position:sticky;top:0;z-index:3;background:#17120d}
+.pr .tt tr:first-child th.sk{z-index:4}
+.pr .sc:has(svg){border:1px solid rgba(201,151,63,.25);border-radius:16px;padding:14px;background:radial-gradient(520px 240px at 50% 0%,rgba(201,151,63,.1),transparent)}
+.pr svg .gs{stroke:#e0b765;stroke-width:2.2;filter:drop-shadow(0 0 5px rgba(224,183,101,.55))}
+.pr svg .gw{stroke:#cbbda6;stroke-width:1.8}
+.pr svg .gl{font-size:17px}
+.czb{margin:0 0 10px}
+.kcell.fl{color:#1a1209;font-weight:700}.kcell.fl small{color:rgba(26,18,9,.65)}
+#pres.split .tt{font-size:12.5px}
+#pres.split .tt th,#pres.split .tt td{padding:2px 4px}
+#pres.split .tt td:not(.sk){min-width:34px;height:26px}
+#pres.split .pj{columns:auto 1}
+#pres.split .pjc.cd{padding:12px;border-radius:16px}
+#pres.split .prh2{font-size:30px;margin-bottom:14px}
+#pres.split .eqr{padding:8px 12px}
+#pres.split .sc{max-height:calc(100dvh - 215px)}
+#pres.split .kcell{width:min(60px,13vw);height:min(60px,13vw);font-size:22px}
+#prSp.on{border-color:var(--gold);color:var(--gold2)}
+/* lista y edición de ejercicios */
+.exh2{background:linear-gradient(90deg,var(--ink),var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.exsub{color:var(--mute);font-size:14px;margin:6px 0 0;max-width:44ch}
+#exList .btn{box-shadow:0 8px 24px rgba(201,151,63,.28)}
+.exl{gap:16px}
+.exc2{border-color:rgba(201,151,63,.18);background:linear-gradient(160deg,#211a13,#14100c);box-shadow:0 14px 34px rgba(0,0,0,.35)}
+.exc2:hover{border-color:var(--gold);box-shadow:0 18px 46px rgba(201,151,63,.2)}
+.exi::after{content:"";position:absolute;inset:auto 0 0 0;height:42%;background:linear-gradient(transparent,rgba(12,9,6,.85));pointer-events:none}
+.exn,.exfav{z-index:1}
+.exc2>b{font-size:19px;padding-top:12px}
+.exempty{display:grid;justify-items:center;gap:10px;text-align:center;margin-top:26px;padding:40px 22px;border:1px dashed rgba(201,151,63,.4);border-radius:24px;background:radial-gradient(420px 200px at 50% 0%,rgba(201,151,63,.12),transparent)}
+.exempty b{font-family:var(--serif);font-size:26px}.exempty>span:not(.exe-ic){color:var(--mute);max-width:36ch}
+.exe-ic{width:64px;height:64px;border-radius:20px;display:grid;place-items:center;font-size:28px;color:var(--gold2);background:rgba(201,151,63,.1);border:1px solid rgba(201,151,63,.35)}
+.exbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:15;margin:-6px -20px 20px;padding:10px 20px;background:rgba(17,14,11,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);align-items:center}
+.exbar .btn{box-shadow:0 8px 22px rgba(201,151,63,.25)}
+.extt{font-size:clamp(30px,5vw,44px);background:linear-gradient(90deg,var(--gold),rgba(201,151,63,0)) left bottom/100% 2px no-repeat;border-bottom:0;padding:6px 0 12px}
+.exlbl{display:flex;align-items:center;gap:10px;font:500 12.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.exlbl::before{content:"";width:18px;height:1px;background:var(--gold)}
+.exq{background:rgba(255,255,255,.03);border-color:rgba(201,151,63,.25);border-left:3px solid var(--gold);border-radius:14px}
+.blk{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(255,255,255,.05),rgba(255,255,255,.01));border:1px solid rgba(201,151,63,.2);border-radius:22px;padding:18px 18px 18px 22px;box-shadow:0 18px 45px rgba(0,0,0,.35)}
+.blk::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--bc,linear-gradient(var(--gold2),var(--gold)))}
+.blk[data-k=km]{--bc:linear-gradient(#e69a6a,var(--ember))}
+.blk[data-k=al]{--bc:linear-gradient(#c6d8a8,#8aa874)}
+.blk[data-k=ci]{--bc:linear-gradient(#b5cfe6,#7fa3c7)}
+.blk[data-k=er]{--bc:linear-gradient(#dcbdf0,#b98ad1)}
+.bi{flex:none;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:rgba(201,151,63,.1);border:1px solid rgba(201,151,63,.32);color:var(--gold2)}
+.blk[data-k=km] .bi{color:#e69a6a;border-color:rgba(230,154,106,.4);background:rgba(196,98,45,.12)}
+.blk[data-k=al] .bi{color:#c6d8a8;border-color:rgba(198,216,168,.4);background:rgba(138,168,116,.12)}
+.blk[data-k=ci] .bi{color:#b5cfe6;border-color:rgba(181,207,230,.4);background:rgba(127,163,199,.12)}
+.blk[data-k=er] .bi{color:#dcbdf0;border-color:rgba(220,189,240,.4);background:rgba(185,138,209,.12)}
+.bh{gap:10px}
+.addw{margin-top:26px;padding-top:18px;border-top:1px dashed rgba(201,151,63,.2)}
+.addw .ch{padding:8px 16px}
+@media (prefers-reduced-motion:no-preference){
+  .exl .exc2,.blk{animation:rev .5s ease backwards}
+  .exl .exc2:nth-child(2){animation-delay:.06s}.exl .exc2:nth-child(3){animation-delay:.12s}.exl .exc2:nth-child(4){animation-delay:.18s}.exl .exc2:nth-child(n+5){animation-delay:.24s}
+}
+#cv{width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;margin:0;padding:0;border:0;background:var(--bg);color:var(--ink)}
+#cv[open]{display:flex;flex-direction:column}
+.cvh{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:calc(10px + env(safe-area-inset-top,0px)) 14px 10px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.cvh b{font-family:var(--serif);font-size:18px}
+.cvb{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+#cvB{flex:1;overflow:auto;padding:16px;cursor:grab;background:radial-gradient(700px 400px at 50% 0%,rgba(201,151,63,.1),transparent)}
+#cvB .sc{overflow:visible;max-width:none;max-height:none;border:0;padding:0}
+#cv svg .gs{stroke:#e0b765;stroke-width:2.2;filter:drop-shadow(0 0 5px rgba(224,183,101,.55))}
+#cv svg .gw{stroke:#cbbda6;stroke-width:1.8}#cv svg .gl{font-size:17px}
+.cpn{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:14px}
+.cpp{border:1px solid rgba(201,151,63,.25);border-radius:16px;padding:12px;background:radial-gradient(420px 200px at 50% 0%,rgba(201,151,63,.1),transparent)}
+.pr .cpp .sc,#cv .cpp .sc{max-height:none;overflow:visible;border:0;padding:0;background:none}
+#cv svg .gs{stroke:#e0b765}
+/* pulido visual global */
+::selection{background:rgba(201,151,63,.38);color:#fff}
+*{scrollbar-width:thin;scrollbar-color:#4b3b26 transparent}
+html::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(620px 400px at 6% 4%,rgba(201,151,63,.11),transparent),radial-gradient(540px 360px at 96% 38%,rgba(196,98,45,.09),transparent),radial-gradient(560px 340px at 18% 100%,rgba(127,163,199,.07),transparent)}
+.brand{background:linear-gradient(90deg,#fff7e8,#f1dcab 55%,var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand i{background:linear-gradient(90deg,var(--gold2),#e69a6a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.bl{display:inline-grid;place-items:center;width:clamp(40px,9vw,50px);height:clamp(40px,9vw,50px);margin-right:12px;vertical-align:middle;border-radius:14px;background:linear-gradient(135deg,rgba(201,151,63,.28),rgba(201,151,63,.06));border:1px solid rgba(201,151,63,.45);color:var(--gold2);box-shadow:0 0 26px rgba(201,151,63,.28)}
+.btn{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--gold2),var(--gold) 55%,#b07a2a);box-shadow:0 8px 22px rgba(201,151,63,.26)}
+.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.38) 50%,transparent 65%);transform:translateX(-120%);transition:transform .6s}
+.btn:hover::after{transform:translateX(120%)}
+.ghost{background:rgba(255,255,255,.03)}
+button.fab{background:linear-gradient(135deg,var(--gold2),var(--gold));box-shadow:0 10px 30px rgba(201,151,63,.42)}
+.tool,.lgbox,.dcard{background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.012)),var(--bg2);border:1px solid rgba(201,151,63,.2);box-shadow:0 18px 45px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.05)}
+.tool h2,.lgbox h3{background:linear-gradient(90deg,var(--ink),#f1dcab);-webkit-background-clip:text;background-clip:text;color:transparent}
+input,select,textarea{background:rgba(0,0,0,.3);border-color:rgba(201,151,63,.2)}
+.ch{background:rgba(255,255,255,.03)}
+.ch.on,.seg button.on{background:linear-gradient(135deg,rgba(201,151,63,.24),rgba(201,151,63,.08));box-shadow:0 0 0 1px var(--gold) inset}
+.pk{background:linear-gradient(150deg,rgba(255,255,255,.05),rgba(255,255,255,.01)),var(--bg);border-color:rgba(201,151,63,.24)}
+.pk:hover{box-shadow:0 14px 40px rgba(201,151,63,.18)}
+.ic{background:linear-gradient(160deg,#2a2118,#17120d);box-shadow:0 12px 30px rgba(0,0,0,.3)}
+.dstat b{background:linear-gradient(135deg,var(--gold2),#e69a6a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.wk i{background:linear-gradient(180deg,#3d2f1e,#241b12)}
+.wk i.t{background:linear-gradient(180deg,var(--gold2),var(--gold))}
+.empty{background:radial-gradient(400px 160px at 50% 0%,rgba(201,151,63,.1),transparent)}
+.sc:has(.tt){border:1px solid rgba(201,151,63,.22);border-radius:16px;background:rgba(0,0,0,.18)}
+.tt th{background:linear-gradient(180deg,#2d2217,#201812);color:var(--gold2)}
+.tt tr:nth-child(even) td:not(.sk){background:rgba(255,255,255,.018)}
+.tt tr:hover td:not(.sk){background:rgba(201,151,63,.08)}
+nav.tabs{background:rgba(17,14,11,.82);backdrop-filter:blur(16px);border-top:1px solid rgba(201,151,63,.2);box-shadow:0 -12px 34px rgba(0,0,0,.4)}
+nav.tabs button{position:relative;transition:color .2s,background .2s}
+nav.tabs button.on::before{content:"";position:absolute;top:-9px;left:26%;right:26%;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));box-shadow:0 0 12px var(--gold)}
+nav.tabs button.on svg{filter:drop-shadow(0 0 6px rgba(224,183,101,.6))}
+@media (min-width:760px){
+  nav.tabs{background:none;border:0;box-shadow:none;backdrop-filter:none}
+  nav.tabs button{border-radius:999px;background:rgba(255,255,255,.03)}
+  nav.tabs button.on{background:linear-gradient(135deg,rgba(201,151,63,.22),rgba(201,151,63,.07));box-shadow:0 0 0 1px var(--gold) inset,0 0 20px rgba(201,151,63,.2)}
+  nav.tabs button.on::before{display:none}
+}
+@keyframes ring{from{transform:scale(1);opacity:.7}to{transform:scale(1.7);opacity:0}}
+@keyframes drift{50%{transform:translate3d(0,-14px,0)}}
+@media (prefers-reduced-motion:no-preference){
+  button.fab::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--gold2);animation:ring 2.4s ease-out infinite;pointer-events:none}
+  html::after{animation:drift 14s ease-in-out infinite}
+}
 /* ventana */
 dialog{background:var(--bg2);color:var(--ink);border:1px solid #3a3228;border-radius:22px;padding:0;width:min(560px,calc(100% - 24px));max-height:92vh}
 dialog::backdrop{background:rgba(5,4,3,.72)}
@@ -410,7 +533,7 @@ svg.i{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.8;stro
 <body>
 <div class="wrap">
 <header>
-  <h1 class="brand">Banco de <i>trabajo</i></h1>
+  <h1 class="brand"><span class="bl" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></span>Banco de <i>trabajo</i></h1>
   <p class="tag">proyectos, archivos y cálculos de electrónica</p>
   <nav class="tabs" id="tabs" style="margin-top:14px">
     <button class="on" data-v="proy"><svg class="i" viewBox="0 0 24 24"><rect x="6" y="5" width="12" height="14" rx="2"/><path d="M3 8h3M3 12h3M3 16h3M18 8h3M18 12h3M18 16h3"/></svg>Proyectos</button>
@@ -513,7 +636,7 @@ svg.i{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.8;stro
     </div>
     <div id="kpWork" data-km="tabla" hidden><p class="hint">Toca las celdas o las filas para cambiar entre 0, 1 y X (no importa). Los grupos se arman solos.</p><div id="kpEqW" hidden><label>Ecuación<input id="kpEq" placeholder="F = A'B + C" spellcheck="false" autocomplete="off" style="font-family:var(--mono);color:var(--gold2)"></label><p id="kpEqE" class="lgerr" style="margin:6px 0 0"></p></div>
     <label>Número de variables</label>
-    <div class="seg" id="kpSeg" style="margin-top:6px"><button data-n="2">2</button><button data-n="3" class="on">3</button><button data-n="4">4</button></div>
+    <div class="seg" id="kpSeg" style="margin-top:6px"><button data-n="2">2</button><button data-n="3" class="on">3</button><button data-n="4">4</button></div><label id="kpNmL" style="margin-top:12px">Nombres de las variables (opcional)<input id="kpNames2" placeholder="I3-I0 · A B C D" spellcheck="false" autocomplete="off" style="font-family:var(--mono)"></label>
     <details class="kpd" id="kpOpt"><summary>Opciones de agrupación<em id="kpTag"></em></summary><p class="hint" style="margin:10px 0 8px">Normalmente se agrupan los 1 (SOP). Agrupa los 0 (POS) si el mapa tiene pocos ceros: a veces sale una ecuación más corta.</p>
     <div class="seg" id="kpMode" style="margin-top:6px"><button data-k="uno" class="on">Agrupar 1 (SOP)</button><button data-k="cero">Agrupar 0 (POS)</button></div></details>
     <div class="sc" id="kpGrid" style="margin-top:16px"></div>
@@ -549,6 +672,7 @@ svg.i{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.8;stro
     <p class="hint">Elige cuántas variables tiene tu ejercicio y toca la columna F para poner 1 o 0. Verás la ecuación y cómo reducirla con las leyes del álgebra booleana.</p>
     <label>Número de variables</label>
     <div class="seg" id="sopSeg" style="margin-top:6px"><button data-n="2">2</button><button data-n="3" class="on">3</button><button data-n="4">4</button><button data-n="5">5</button></div>
+    <label style="margin-top:14px">Nombres de las variables (opcional)<input id="sopNames" placeholder="I3-I0 · A B C D" spellcheck="false" autocomplete="off" style="font-family:var(--mono)"></label>
     <label style="margin-top:14px">O escribe los minitérminos donde F = 1<input id="sopM" placeholder="Ej. 1, 3, 7" inputmode="numeric" autocomplete="off"></label>
     <div class="sc" id="sopTbl" style="margin-top:14px"></div>
     <p style="margin:12px 0 0"><button class="ghost" id="sopClr">Limpiar</button></p>
@@ -567,9 +691,10 @@ svg.i{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.8;stro
 <input type="file" id="exFile" accept="image/*" hidden>
 <input type="file" id="exCover" accept="image/*" hidden>
 <dialog id="xm"></dialog>
+<dialog id="cv"><div class="cvh"><b id="cvT"></b><div class="cvb"><button class="ch" data-cv="fit">Ajustar a pantalla</button><button class="ch" data-cv="m" aria-label="Alejar">−</button><button class="ch" data-cv="p" aria-label="Acercar">+</button><button class="ch" data-cv="1">100%</button><button class="pic" data-cv="x" aria-label="Cerrar">✕</button></div></div><div id="cvB"></div></dialog>
 <dialog id="qp"><div class="qpb"><div class="qph"><b id="qpT"></b><button class="xmx" data-qp="x" aria-label="Cerrar" style="width:30px;height:30px">✕</button></div><p id="qpP" class="qpp"></p><textarea id="qpX" hidden maxlength="400" placeholder="Escribe aquí el comentario"></textarea><button class="ch" id="qpE" data-qp="e">Editar</button></div></dialog>
 <dialog id="oq"><div class="oqw" data-oq="x"></div><div class="oqs"><div class="xmh"><b id="oqT"></b><button class="xmx" data-oq="x" aria-label="Cerrar">✕</button></div><p class="cmp" style="margin:0 0 8px">Lógica de esta salida</p><textarea id="oqX" maxlength="600" placeholder="Escribe aquí bajo qué lógica funciona esta salida"></textarea><div class="row" style="margin-top:10px;justify-content:flex-end"><button class="btn" data-oq="x">Guardar</button></div></div></dialog>
-<dialog id="pres"><div class="pr"><div class="prh"><b id="prT"></b><button class="pic" id="prFS" aria-label="Pantalla completa" title="Pantalla completa">⛶</button><button class="pic" id="prX" aria-label="Cerrar">✕</button></div><div class="prp"><i id="prBar"></i></div><div id="prB"></div><div class="prf"><button class="ghost" id="prP" aria-label="Anterior">‹</button><span id="prD" class="cmp" style="margin:0"></span><button class="ghost" id="prNx" aria-label="Siguiente">›</button></div></div></dialog>
+<dialog id="pres"><div class="pr"><div class="prh"><b id="prT"></b><button class="pic" id="prSp" aria-label="Modo pantalla dividida" title="Modo pantalla dividida (para media pantalla)">▥</button><button class="pic" id="prFS" aria-label="Pantalla completa" title="Pantalla completa">⛶</button><button class="pic" id="prX" aria-label="Cerrar">✕</button></div><button class="pic zenx" id="prZ" aria-label="Salir del modo sin menús" title="Salir del modo sin menús">⤡</button><div id="prM" class="prm" hidden></div><div class="prp"><i id="prBar"></i></div><div id="prB"></div><div class="prf"><button class="ghost" id="prP" aria-label="Anterior">‹</button><span id="prD" class="cmp" style="margin:0"></span><button class="ghost" id="prNx" aria-label="Siguiente">›</button></div></div></dialog>
 <dialog id="vw"><div class="dl"><h2 id="vT" style="font-size:22px;overflow-wrap:anywhere"></h2><div id="vB"></div><div class="row"><button class="ghost" id="vSave">Guardar copia</button><button class="btn" id="vClose">Cerrar</button></div></div></dialog>
 
 <dialog id="dlg"><div class="dl">
@@ -1048,7 +1173,7 @@ $("#lgIn").oninput=runLog;
 
 /* ---------- SOP desde tabla ---------- */
 let sopN=3,sopF=Array(8).fill(0),sopCirc="bas";
-const sopVs=()=>[..."ABCDE"].slice(0,sopN);
+let sopNm=[];const sopVs=()=>Array.from({length:sopN},(_,i)=>sopNm[i]||"ABCDE"[i]);
 function sopTable(){
   const n=sopN,vs=sopVs();
   $("#sopTbl").innerHTML=`<table class="tt"><tr>${vs.map(v=>`<th>${v}</th>`).join("")}<th>F</th></tr>${sopF.map((f,r)=>`<tr class="${f?"one":""}">${vs.map((v,i)=>`<td>${(r>>(n-1-i))&1}</td>`).join("")}<td><button class="fb ${f?"on":""}" data-r="${r}" aria-label="Fila ${r}: F vale ${f}">${f}</button></td></tr>`).join("")}</table>`;
@@ -1093,6 +1218,8 @@ $("#sopSeg").onclick=e=>{const b=e.target.closest("button");if(!b)return;sopN=+b
 $("#sopTbl").onclick=e=>{const b=e.target.closest("[data-r]");if(!b)return;const r=+b.dataset.r;sopF[r]=1-sopF[r];$("#sopM").value=sopF.map((f,i)=>f?i:null).filter(x=>x!==null).join(", ");sopTable();sopRun()};
 $("#sopM").oninput=e=>{const L=e.target.value.match(/\d+/g)||[];sopF=sopF.map(()=>0);L.forEach(x=>{if(+x<sopF.length)sopF[+x]=1});sopTable();sopRun()};
 $("#sopClr").onclick=()=>{sopF=sopF.map(()=>0);$("#sopM").value="";sopTable();sopRun()};
+$("#sopNames").oninput=e=>{sopNm=nmParse(e.target.value);sopTable();sopRun()};
+$("#kpNames2").oninput=e=>{kpCust=nmParse(e.target.value);kpRun()};
 $("#sopOut").onclick=e=>{const b=e.target.closest(".circ button");if(!b)return;sopCirc=b.dataset.c;sopRun()};
 sopTable();sopRun();
 
@@ -1140,7 +1267,7 @@ function kpRunOld(){
   const fa=kpCirc==="esp"&&sp.changed?sp.ast:sAst,bar=sp.changed?`<div class="seg circ" style="margin-bottom:12px"><button data-c="bas" class="${kpCirc==="bas"?"on":""}">Básicas</button><button data-c="esp" class="${kpCirc==="esp"?"on":""}">Especiales</button></div>`:"";
   o.innerHTML=lgBox("Grupos",`<ol class="steps">${li}</ol><p class="eq">F = ${fin}</p><p class="cmp">Reglas: grupos de 1, 2, 4, 8… celdas; los bordes del mapa se conectan; las X solo se usan si ayudan a hacer un grupo más grande.</p>${lgSpHtml(sp,minT)}`)+lgBox("Circuito",bar+lgDraw(fa)+`<p class="cmp">${cnt(fa)} compuertas</p>`);
 }
-let kpMd="uno",kpNames=null;const kpNm=n=>kpNames&&kpNames.length===n?kpNames:[..."ABCD"].slice(0,n);
+let kpMd="uno",kpNames=null,kpCust=[];const kpNm=n=>kpNames&&kpNames.length===n?kpNames:Array.from({length:n},(_,i)=>kpCust[i]||"ABCD"[i]);
 function kmRO(vs,v,groups){
   const n=vs.length,lay=n===2?{R:G2,C:G2,rv:1}:n===3?{R:G2,C:G4,rv:1}:{R:G4,C:G4,rv:2},mem={};
   groups.forEach((g,gi)=>g.m.forEach(m=>(mem[m]=mem[m]||[]).push(gi)));
@@ -1168,7 +1295,7 @@ $("#kpEq").oninput=e=>{
 function kpVis(){
   const w=$("#kpWork").dataset.km,has=kpV.some(v=>v!==0),eq=w==="eq",eqOk=!eq||($("#kpEq").value.trim()&&!$("#kpEqE").textContent),show=has&&eqOk;
   $("#kpGrid").hidden=!(show||w==="mapa");$("#kpTTd").hidden=!(show||w==="tabla");$("#kpOut").hidden=!show;$("#kpOpt").hidden=!show;
-  $("#kpSeg").hidden=eq;$("#kpSeg").previousElementSibling.hidden=eq;
+  $("#kpSeg").hidden=eq;$("#kpNmL").hidden=eq;$("#kpSeg").previousElementSibling.hidden=eq;
 }
 function kpTab(){
   const n=kpN,vs=kpNm(n);
@@ -1298,7 +1425,7 @@ function nmParse(s){const out=[];s.trim().split(/[\s,;]+/).filter(Boolean).forEa
 const nmPanel=b=>`<div class="ddp" style="display:grid;gap:8px;max-height:none"><label>Entradas<input data-a="nmi" value="${esc(b.iv.join(" "))}" placeholder="A B C D · X1-X4" spellcheck="false" style="font-family:var(--mono)"></label><label>Salidas<input data-a="nmo" value="${esc(b.o.map(o=>o.n).join(" "))}" placeholder="01-07 · S1-S7 · a-g" spellcheck="false" style="font-family:var(--mono)"></label><p class="cmp" style="margin:0">Separa con espacios. Para una serie usa un rango: <b>01-07</b>, <b>S1-S7</b> o <b>a-g</b>.</p><div><button class="ch on" data-a="napply">Aplicar</button></div></div>`;
 function ttResize(b,nn){const n0=b.n;if(nn===n0)return;b.o.forEach(o=>{const old=o.v;o.v=Array.from({length:1<<nn},(_,r)=>nn>n0?old[r>>(nn-n0)]:old[r<<(n0-nn)])});b.iv=Array.from({length:nn},(_,j)=>b.iv[j]||"ABCDEF"[j]);b.n=nn}
 const newER=()=>({id:uid("b"),k:"er",t:"Ecuación reducida",x:""});
-function lgDrawMulti(L){
+function lgDrawMultiRaw(L){
   const vs=[...new Set(L.flatMap(o=>lgVars(o.ast)))].sort((p,q)=>p[0]<q[0]?-1:p[0]>q[0]?1:(+p.slice(1)||0)-(+q.slice(1)||0)),GW=96,RH=30,TOP=46,SP=Math.max(26,Math.max(...[...new Set(L.flatMap(o=>lgVars(o.ast)))].map(v=>v.length))*9+10),RX=v=>34+vs.indexOf(v)*SP,LX=RX(vs[vs.length-1])+34,last={};
   let rows=0,sh="",dots="";
   const dep=n=>n.t==="v"?0:1+Math.max(...lgKids(n).map(dep)),D=Math.max(1,...L.map(o=>dep(o.ast)));
@@ -1320,12 +1447,12 @@ function lgDrawMulti(L){
   vs.forEach(v=>{const x=RX(v);sh+=`<text x="${x-5}" y="18" class="gl">${v}</text><path class="gw" d="M${x} 28V${last[v]}"/>`});sh+=dots;
   return `<div class="sc"><svg style="max-width:${W<=560?"100%":"none"};height:auto" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Circuito lógico">${sh}</svg></div>`;
 }
-const ciDraw=b=>{
+const ciDraw=(b,view)=>{
   const ls=b.e.split("\n").map(s=>s.trim()).filter(Boolean);if(!ls.length)return"";
   const outs=[],errs=[];
-  ls.forEach((l,i)=>{const p=l.indexOf("="),name=p>0?l.slice(0,p).trim():(ls.length>1?"S"+(i+1):"F"),ex=p>0?l.slice(p+1):l;try{outs.push({name,ast:b.nsp?lgParse(ex):spAst(lgParse(ex))})}catch(er){errs.push("Línea "+(i+1)+": "+er.message)}});
+  ls.forEach((l,i)=>{const p=l.indexOf("="),name=p>0?l.slice(0,p).trim():(ls.length>1?"S"+(i+1):"F"),ex=p>0?l.slice(p+1):l;try{outs.push({name,i,ast:b.nsp?lgParse(ex):spAst(lgParse(ex))})}catch(er){errs.push("Línea "+(i+1)+": "+er.message)}});
   const used=new Set(),col=n=>{if(["nand","nor","xnor","xor"].includes(n.t))used.add(n.t.toUpperCase());if(n.t==="n")col(n.a);else if(n.c)n.c.forEach(col)};outs.forEach(o=>col(o.ast));
-  return (outs.length?lgDrawMulti(outs):"")+(used.size?`<p class="cmp">Compuertas especiales en este circuito: ${[...used].join(", ")}</p>`:"")+errs.map(m=>`<p class="lgerr">${esc(m)}</p>`).join("");
+  return (outs.length&&view===true?czb2(b,outs.length>=5,outs):"")+(outs.length?lgDrawMulti((()=>{const f=view&&b.cs&&b.cs.length?outs.filter(o=>b.cs.includes(o.i)):outs;return f.length?f:outs})(),view===true?(b.z===undefined?"fit":b.z):view==="full"?1:0):"")+(used.size?`<p class="cmp">Compuertas especiales en este circuito: ${[...used].join(", ")}</p>`:"")+errs.map(m=>`<p class="lgerr">${esc(m)}</p>`).join("");
 };
 const eqNm=l=>{const p=l.indexOf("=");return p>0?l.slice(0,p).trim():"F"};
 function eqFmt(r){
@@ -1346,6 +1473,19 @@ function eqHTML(t,st){
   }
   return h+vis.map(i=>eqRow(L[i])).join("");
 }
+function lgDrawMulti(L,z){
+  const h=lgDrawMultiRaw(L);if(!z)return h;
+  const W=+h.match(/width="(\d+)"/)[1],st=z==="fit"?`width:100%;max-width:${Math.round(W*1.7)}px;height:auto;display:block;margin:0 auto`:`width:${Math.round(W*z)}px;max-width:none;height:auto;display:block;margin:0 auto`;
+  return h.replace(/style="max-width:[^"]*"/,`style="${st}"`);
+}
+const czb=b=>{const z=b.z===undefined?"fit":b.z;return `<div class="chs czb"><button class="ch ${z==="fit"?"on":""}" data-a="cz" data-z="fit">Ajustar</button><button class="ch" data-a="cz" data-z="m" aria-label="Alejar">−</button><button class="ch" data-a="cz" data-z="p" aria-label="Acercar">+</button><button class="ch ${z===1?"on":""}" data-a="cz" data-z="1">100%</button></div>`};
+const kfs=gs=>{const c=gs.map(g=>KC[g%6]),bg=c.length===1?c[0]:`linear-gradient(135deg,${c.map((x,i)=>`${x} ${(i*100/c.length).toFixed(0)}% ${((i+1)*100/c.length).toFixed(0)}%`).join(",")})`;return ` style="background:${bg};border-color:${c[0]};box-shadow:0 0 18px ${c[0]}66"`};
+const kmView=b=>{
+  if(!b.g.length)return"";
+  const sel=b.gs&&b.gs.length&&b.gs.length<b.g.length?b.gs:null,lab=!sel?`Todos los grupos (${b.g.length})`:sel.length<=3?sel.map(i=>"Grupo "+(i+1)).join(", "):`${sel.length} de ${b.g.length} grupos`;
+  return `<div class="tc"><button class="ddb" data-a="kgd" aria-expanded="${!!b.go}">Mostrar: ${lab} ${b.go?"▴":"▾"}</button><button class="ch ${b.gf?"on":""}" data-a="kgf">Rellenar celdas</button></div>`+(b.go?`<div class="ddp"><button class="ch ${!sel?"on":""}" data-a="kgs" data-i="all">Todos</button>${b.g.map((g,i)=>`<button class="ch ${sel&&sel.includes(i)?"on":""}" data-a="kgs" data-i="${i}"><span class="dot" style="background:${KC[i%6]}"></span>Grupo ${i+1}</button>`).join("")}</div>`:"");
+};
+const BI={tt:'<svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></svg>',km:'<svg class="i" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg>',al:'<svg class="i" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg>',ci:'<svg class="i" viewBox="0 0 24 24"><path d="M3 8h5M3 16h5M8 5h4a7 7 0 0 1 0 14H8zM19 12h2"/></svg>',er:'<svg class="i" viewBox="0 0 24 24"><path d="M5 9h14M5 15h14"/></svg>'};
 function joinChip(b,i){
   const ex=exC(),pv=ex&&i>0?ex.bl[i-1]:null,j=b.j===undefined?(b.k==="ci"&&pv&&pv.k==="ci"):b.j;
   return `<div class="chs" style="margin:-4px 0 10px"><button class="ch ${j?"on":""}" data-a="join" aria-pressed="${!!j}">${i===0?"Mostrar junto a las ecuaciones":"Mostrar junto al anterior"}</button></div>`;
@@ -1356,7 +1496,7 @@ function prDrawRaw(){
   exSlide=Math.max(0,Math.min(sl.length-1,exSlide));
   $("#prT").textContent=ex.t;$("#prD").textContent=(exSlide+1)+" / "+sl.length;$("#prBar").style.width=((exSlide+1)/sl.length*100)+"%";
   const s=sl[exSlide];
-  const parts=[];if(s[0]<0)parts.push(`<div class="pjc"><p class="prE">Presentación</p><h2 class="prh2">${esc(ex.t)}</h2>${ex.d?`<p class="prs">${esc(ex.d)}</p>`:""}${eqHTML(ex.eq,ex)}</div>`);s.filter(i=>i>=0).forEach(i=>parts.push(`<div class="pjc">${blockHTML(ex.bl[i],i,false)}</div>`));
+  const parts=[];if(s[0]<0)parts.push(`<div class="pjc"><p class="prE">Presentación</p><h2 class="prh2">${esc(ex.t)}</h2>${ex.d?`<p class="prs">${esc(ex.d)}</p>`:""}${eqHTML(ex.eq,ex)}</div>`);s.filter(i=>i>=0).forEach(i=>parts.push(`<div class="pjc cd">${blockHTML(ex.bl[i],i,false)}</div>`));
   $("#prB").innerHTML=parts.length>1?`<div class="pj">${parts.join("")}</div>`:parts.join("");
 }
 const newTT=()=>({id:uid("b"),k:"tt",t:"Tabla de verdad",n:3,iv:["A","B","C"],o:[{n:"S1",v:Array(8).fill(0)}],sel:null});
@@ -1373,10 +1513,10 @@ function ttHTMLold(b,ed){
 }
 function kmHTML(b,ed){
   const n=b.n,vs=[..."ABCD"].slice(0,n),lay=n===2?{R:G2,C:G2,rv:1}:n===3?{R:G2,C:G4,rv:1}:{R:G4,C:G4,rv:2},mem={};
-  b.g.forEach((g,gi)=>g.forEach(m=>(mem[m]=mem[m]||[]).push(gi)));
+  const vis=!ed&&b.gs&&b.gs.length&&b.gs.length<b.g.length?b.gs:b.g.map((_,i)=>i),fill=!ed&&b.gf;b.g.forEach((g,gi)=>{if(vis.includes(gi))g.forEach(m=>(mem[m]=mem[m]||[]).push(gi))});
   const tg=ed?"button":"div";
   let h=`<table class="kpt"><tr><th class="c">${vs.slice(0,lay.rv).join("")} / ${vs.slice(lay.rv).join("")}</th>${lay.C.map(c=>`<th>${c}</th>`).join("")}</tr>`;
-  lay.R.forEach(r=>{h+=`<tr><th>${r}</th>`+lay.C.map(c=>{const m=parseInt(r+c,2),v=b.v[m];return `<td><${tg} class="kcell ${v===1?"v1":v===2?"vx":""}" ${ed?`data-a="kc" data-m="${m}"`:""}><small>${m}</small>${["0","1","X"][v]}${mem[m]?`<i>${mem[m].map(g=>`<b style="background:${KC[g%6]}"></b>`).join("")}</i>`:""}</${tg}></td>`}).join("")+"</tr>"});
+  lay.R.forEach(r=>{h+=`<tr><th>${r}</th>`+lay.C.map(c=>{const m=parseInt(r+c,2),v=b.v[m];return `<td><${tg} class="kcell ${v===1?"v1":v===2?"vx":""}${fill&&mem[m]?" fl":""}"${fill&&mem[m]?kfs(mem[m]):""} ${ed?`data-a="kc" data-m="${m}"`:""}><small>${m}</small>${["0","1","X"][v]}${mem[m]&&!fill?`<i>${mem[m].map(g=>`<b style="background:${KC[g%6]}"></b>`).join("")}</i>`:""}</${tg}></td>`}).join("")+"</tr>"});
   return `<div class="sc">${h}</table></div>`;
 }
 const ciDrawOld=b=>{if(!b.e.trim())return"";try{return lgDraw(lgParse(b.e))}catch(er){return `<p class="lgerr">${esc(er.message)}</p>`}};
@@ -1384,24 +1524,24 @@ function blockHTML(b,i,ed){
   let body="";
   if(b.k==="tt")body=ttBlock(b,ed);else if(b.k==="ttOLD")body=(ed?`<div class="chs"><span class="cmp" style="margin:0 4px 0 0">Entradas</span>${[2,3,4,5,6].map(n=>`<button class="ch ${b.n===n?"on":""}" data-a="ttn" data-n="${n}">${n}</button>`).join("")}<span class="cmp" style="margin:0 4px 0 10px">Salidas ${b.o.length}</span><button class="ch" data-a="oadd" aria-label="Añadir salida">+</button><button class="ch" data-a="orem" aria-label="Quitar salida">−</button></div>`:"")+ttHTML(b,ed);
   else if(b.k==="km"){
-    const top=ed?`<div class="chs"><span class="cmp" style="margin:0 4px 0 0">Variables</span>${[2,3,4].map(n=>`<button class="ch ${b.n===n?"on":""}" data-a="kn" data-n="${n}">${n}</button>`).join("")}<input class="ni" data-a="knm" value="${esc(b.nm)}" aria-label="Nombre de la salida" style="margin-left:10px;width:min(100%,200px);text-align:left;padding:6px 10px;font-size:15px"></div><div class="chs"><button class="ch ${b.br<0?"on":""}" data-a="br" data-i="-1">Valores</button>${b.g.map((g,j)=>`<button class="ch ${b.br===j?"on":""}" data-a="br" data-i="${j}"><span class="dot" style="background:${KC[j%6]}"></span>Grupo ${j+1}</button>`).join("")}${b.g.length<6?`<button class="ch" data-a="gadd">+ grupo</button>`:""}${b.br>=0?`<button class="ch" data-a="grm">Quitar grupo</button>`:""}</div>`:`<p class="cmp" style="margin-top:0">Salida: ${esc(b.nm)}</p>`;
+    const top=ed?`<div class="chs"><span class="cmp" style="margin:0 4px 0 0">Variables</span>${[2,3,4].map(n=>`<button class="ch ${b.n===n?"on":""}" data-a="kn" data-n="${n}">${n}</button>`).join("")}<input class="ni" data-a="knm" value="${esc(b.nm)}" aria-label="Nombre de la salida" style="margin-left:10px;width:min(100%,200px);text-align:left;padding:6px 10px;font-size:15px"></div><div class="chs"><button class="ch ${b.br<0?"on":""}" data-a="br" data-i="-1">Valores</button>${b.g.map((g,j)=>`<button class="ch ${b.br===j?"on":""}" data-a="br" data-i="${j}"><span class="dot" style="background:${KC[j%6]}"></span>Grupo ${j+1}</button>`).join("")}${b.g.length<6?`<button class="ch" data-a="gadd">+ grupo</button>`:""}${b.br>=0?`<button class="ch" data-a="grm">Quitar grupo</button>`:""}</div>`:`<p class="cmp" style="margin-top:0">Salida: ${esc(b.nm)}</p>${kmView(b)}`;
     body=top+kmHTML(b,ed);
   }else if(b.k==="er")body=ed?`<textarea class="exq" data-a="al" placeholder="S1 = A + B&#10;S2 = A'C" spellcheck="false">${esc(b.x)}</textarea>`:eqHTML(b.x,b);
   else if(b.k==="al")body=ed?`<textarea class="exq" data-a="al" style="color:var(--ink);font-size:16px;min-height:160px" placeholder="Escribe aquí tus pasos" spellcheck="false">${esc(b.x)}</textarea>`:`<pre class="alp">${esc(b.x)}</pre>`;
-  else body=(ed?`<textarea class="exq" data-a="ce" style="min-height:90px;font-size:16px" placeholder="Una ecuación por línea (todas comparten las entradas)&#10;O0 = I3(I1+I0)&#10;O1 = I2'I0" spellcheck="false">${esc(b.e)}</textarea><div class="chs" style="margin-top:10px"><button class="ch ${b.nsp?"":"on"}" data-a="spt">Compuertas especiales</button><button class="ch" data-a="cup">Subir imagen</button>${b.img?`<button class="ch" data-a="cimg">Quitar imagen</button>`:""}</div>`:"")+ciDraw(b)+(b.img?`<img class="ciimg" src="/_blob/${b.img}" alt="Circuito">`:"");
-  const head=ed?`<div class="bh"><input class="bt2" data-a="bt" value="${esc(b.t)}" aria-label="Título del bloque"><span class="bc"><button class="ic2" data-a="up" aria-label="Subir">↑</button><button class="ic2" data-a="dn" aria-label="Bajar">↓</button><button class="ic2" data-a="rm" aria-label="Eliminar bloque">✕</button></span></div>`:`<h3 class="bt3">${esc(b.t)}</h3>`;
-  return `<div class="${ed?"blk":""}" data-b="${i}" ${ed?"":"style=\"margin-bottom:8px\""}>${head}${ed?joinChip(b,i):""}${body}</div>`;
+  else body=(ed?`<textarea class="exq" data-a="ce" style="min-height:90px;font-size:16px" placeholder="Una ecuación por línea (todas comparten las entradas)&#10;O0 = I3(I1+I0)&#10;O1 = I2'I0" spellcheck="false">${esc(b.e)}</textarea><div class="chs" style="margin-top:10px"><button class="ch ${b.nsp?"":"on"}" data-a="spt">Compuertas especiales</button><button class="ch" data-a="cup">Subir imagen</button>${b.img?`<button class="ch" data-a="cimg">Quitar imagen</button>`:""}</div>`:"")+ciDraw2(b,!ed)+(b.img?`<img class="ciimg" src="/_blob/${b.img}" alt="Circuito">`:"");
+  const head=ed?`<div class="bh"><span class="bi">${BI[b.k]||""}</span><input class="bt2" data-a="bt" value="${esc(b.t)}" aria-label="Título del bloque"><span class="bc"><button class="ic2" data-a="up" aria-label="Subir">↑</button><button class="ic2" data-a="dn" aria-label="Bajar">↓</button><button class="ic2" data-a="rm" aria-label="Eliminar bloque">✕</button></span></div>`:`<h3 class="bt3">${esc(b.t)}</h3>`;
+  return `<div class="${ed?"blk":""}" data-b="${i}" data-k="${b.k}" ${ed?"":"style=\"margin-bottom:8px\""}>${head}${ed?joinChip(b,i):""}${body}</div>`;
 }
 const eqHTMLold=t=>t.split("\n").filter(l=>l.trim()).map(l=>`<div class="eql">${esc(l)}</div>`).join("");
 function exRenderRaw(){
   const L=$("#exList"),E=$("#exEd");
   if(!exCur||!exC()){
     exCur=null;E.hidden=true;L.hidden=false;
-    L.innerHTML=`<div class="exh"><div><p class="ey">Ejercicios y proyectos</p><h2 class="exh2">Presentar</h2></div><span class="exbt"><button class="ghost ic3" data-a="exview" aria-label="Cambiar vista">${S.exv==="list"?'<svg class="i" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>':'<svg class="i" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>'}</button><button class="ghost" data-a="new">+ Nuevo</button></span></div>`+(EX().length?`<div class="exl ${S.exv==="list"?"lst":""}">${[...EX()].sort((p,q)=>(q.fav?1:0)-(p.fav?1:0)).map(x=>`${exCard(x)}`).join("")}</div>`:`<p class="cmp" style="margin-top:22px">Aún no hay ejercicios. Crea uno con el botón de arriba.</p>`);
+    L.innerHTML=`<div class="exh"><div><p class="ey">Ejercicios y proyectos</p><h2 class="exh2">Presentar</h2><p class="exsub">${EX().length} ejercicio${EX().length===1?"":"s"} · ${EX().filter(x=>x.fav).length} favorito${EX().filter(x=>x.fav).length===1?"":"s"}. Mantén presionada una tarjeta para ver más opciones.</p></div><span class="exbt"><button class="ghost ic3" data-a="exview" aria-label="Cambiar vista">${S.exv==="list"?'<svg class="i" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>':'<svg class="i" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>'}</button><button class="btn" data-a="new">+ Nuevo</button></span></div>`+(EX().length?`<div class="exl ${S.exv==="list"?"lst":""}">${[...EX()].sort((p,q)=>(q.fav?1:0)-(p.fav?1:0)).map(x=>`${exCard(x)}`).join("")}</div>`:`<div class="exempty"><span class="exe-ic">▥</span><b>Aquí vivirán tus ejercicios</b><span>Crea el primero para guardar ecuaciones, tablas de verdad, mapas y circuitos, y presentarlos con comodidad.</span><button class="btn" data-a="new">+ Crear ejercicio</button></div>`);
     return;
   }
   const ex=exC();L.hidden=true;E.hidden=false;
-  E.innerHTML=`<div class="exh"><button class="ghost" data-a="back">‹ Ejercicios</button><button class="btn" data-a="pres">Presentar</button></div><input class="extt" data-a="title" value="${esc(ex.t)}" aria-label="Título"><input class="exdesc" data-a="desc" value="${esc(ex.d||"")}" placeholder="Descripción corta (opcional)" maxlength="160"><label>Ecuaciones (una por línea)</label><textarea class="exq" data-a="eq" placeholder="S1 = A'B + C" spellcheck="false">${esc(ex.eq)}</textarea>${ex.bl.map((b,i)=>blockHTML(b,i,true)).join("")}<div class="addw"><button class="plus" data-a="plus" aria-label="Añadir">+</button>${exAdd?`<button class="ch" data-a="add" data-kk="tt">Tabla de verdad</button><button class="ch" data-a="add" data-kk="km">Mapa de Karnaugh</button><button class="ch" data-a="add" data-kk="al">Proceso algebraico</button><button class="ch" data-a="add" data-kk="er">Ecuación reducida</button><button class="ch" data-a="add" data-kk="ci">Circuito</button>`:""}</div><p style="margin-top:30px"><button class="ghost danger" data-a="del">Eliminar ejercicio</button></p>`;
+  E.innerHTML=`<div class="exh exbar"><button class="ghost" data-a="back">‹ Ejercicios</button><button class="btn" data-a="pres">Presentar</button></div><input class="extt" data-a="title" value="${esc(ex.t)}" aria-label="Título"><input class="exdesc" data-a="desc" value="${esc(ex.d||"")}" placeholder="Descripción corta (opcional)" maxlength="160"><label class="exlbl">Ecuaciones (una por línea)</label><textarea class="exq" data-a="eq" placeholder="S1 = A'B + C" spellcheck="false">${esc(ex.eq)}</textarea>${ex.bl.map((b,i)=>blockHTML(b,i,true)).join("")}<div class="addw"><button class="plus" data-a="plus" aria-label="Añadir">+</button>${exAdd?`<button class="ch" data-a="add" data-kk="tt">Tabla de verdad</button><button class="ch" data-a="add" data-kk="km">Mapa de Karnaugh</button><button class="ch" data-a="add" data-kk="al">Proceso algebraico</button><button class="ch" data-a="add" data-kk="er">Ecuación reducida</button><button class="ch" data-a="add" data-kk="ci">Circuito</button>`:""}</div><p style="margin-top:30px"><button class="ghost danger" data-a="del">Eliminar ejercicio</button></p>`;
 }
 function prDrawOld(){
   const ex=exC();if(!ex)return;
@@ -1431,6 +1571,14 @@ function exClick(e){
   else if(k==="up"&&bi>0)[ex.bl[bi-1],ex.bl[bi]]=[ex.bl[bi],ex.bl[bi-1]];
   else if(k==="dn"&&bi<ex.bl.length-1)[ex.bl[bi+1],ex.bl[bi]]=[ex.bl[bi],ex.bl[bi+1]];
   else if(k==="sel"){if(a.dataset.i==="all")b.sel=null;else{const s=b.sel||[],p=s.indexOf(i);p<0?s.push(i):s.splice(p,1);b.sel=s.length&&s.length<b.o.length?s:null}}
+  else if(k==="cmode")b.cm=b.cm==="one"?"pan":"one";
+  else if(k==="cod")b.co=!b.co;
+  else if(k==="cos"){const n=b.e.split("\n").map(s=>s.trim()).filter(Boolean).length,sel=b.cs||[];if(a.dataset.i==="all")b.cs=null;else{const p=sel.indexOf(i);p<0?sel.push(i):sel.splice(p,1);b.cs=sel.length&&sel.length<n?sel:null}}
+  else if(k==="cfull"){cvOpen(b);return}
+  else if(k==="kgd")b.go=!b.go;
+  else if(k==="kgf")b.gf=!b.gf;
+  else if(k==="kgs"){const sel=b.gs||[];if(a.dataset.i==="all")b.gs=null;else{const p=sel.indexOf(i);p<0?sel.push(i):sel.splice(p,1);b.gs=sel.length&&sel.length<b.g.length?sel:null}}
+  else if(k==="cz"){const z=a.dataset.z,cur=typeof b.z==="number"?b.z:1;b.z=z==="fit"?"fit":z==="1"?1:Math.max(.3,Math.min(4,z==="p"?cur*1.25:cur/1.25))}
   else if(k==="join"){const pv=ex.bl[bi-1],cur=b.j===undefined?(b.k==="ci"&&pv&&pv.k==="ci"):b.j;b.j=!cur}
   else if(k==="lg")b.lg=!b.lg;
   else if(k==="ocm"){oqOpen(b,i);return}
@@ -1579,6 +1727,64 @@ function prDraw(){
   B.querySelectorAll(".sc").forEach((e,i)=>{if(sc[i])e.scrollLeft=sc[i]});B.scrollTop=t;
 }
 $("#pres").addEventListener("close",()=>{prLast=-1});
+const czb2=(b,big,outs)=>{
+  const z=b.z===undefined?"fit":b.z,sel=b.cs&&b.cs.length?b.cs:null;
+  let h=`<div class="chs czb"><button class="ch ${z==="fit"?"on":""}" data-a="cz" data-z="fit">Ajustar</button><button class="ch" data-a="cz" data-z="m" aria-label="Alejar">−</button><button class="ch" data-a="cz" data-z="p" aria-label="Acercar">+</button><button class="ch ${z===1?"on":""}" data-a="cz" data-z="1">100%</button>${big?`<button class="ch" data-a="cfull">Ver completo ⤢</button>`:""}</div>`;
+  if(big){
+    const lab=!sel?`Todas las salidas (${outs.length})`:sel.length<=3?outs.filter(o=>sel.includes(o.i)).map(o=>o.name).join(", "):`${sel.length} de ${outs.length} salidas`;
+    h+=`<div class="tc"><button class="ddb" data-a="cod" aria-expanded="${!!b.co}">Mostrar: ${esc(lab)} ${b.co?"▴":"▾"}</button></div>`+(b.co?`<div class="ddp"><button class="ch ${!sel?"on":""}" data-a="cos" data-i="all">Todas</button>${outs.map(o=>`<button class="ch ${sel&&sel.includes(o.i)?"on":""}" data-a="cos" data-i="${o.i}">${esc(o.name)}</button>`).join("")}</div>`:"");
+  }
+  return h;
+};
+function ciParse(b){
+  const ls=b.e.split("\n").map(s=>s.trim()).filter(Boolean),outs=[],errs=[];
+  ls.forEach((l,i)=>{const p=l.indexOf("="),name=p>0?l.slice(0,p).trim():(ls.length>1?"S"+(i+1):"F"),ex=p>0?l.slice(p+1):l;try{outs.push({name,i,ast:b.nsp?lgParse(ex):spAst(lgParse(ex))})}catch(er){errs.push("Línea "+(i+1)+": "+er.message)}});
+  return{outs,errs};
+}
+const czb3=(b,big,outs,pan)=>{
+  const z=b.z===undefined?"fit":b.z,sel=b.cs&&b.cs.length?b.cs:null;
+  let h=`<div class="chs czb">${pan?"":`<button class="ch ${z==="fit"?"on":""}" data-a="cz" data-z="fit">Ajustar</button><button class="ch" data-a="cz" data-z="m" aria-label="Alejar">−</button><button class="ch" data-a="cz" data-z="p" aria-label="Acercar">+</button><button class="ch ${z===1?"on":""}" data-a="cz" data-z="1">100%</button>`}${big?`<button class="ch" data-a="cfull">Ver completo ⤢</button>`:""}${outs.length>=7?`<button class="ch ${pan?"on":""}" data-a="cmode">${pan?"Un solo dibujo":"En paneles"}</button>`:""}</div>`;
+  if(big){
+    const lab=!sel?`Todas las salidas (${outs.length})`:sel.length<=3?outs.filter(o=>sel.includes(o.i)).map(o=>o.name).join(", "):`${sel.length} de ${outs.length} salidas`;
+    h+=`<div class="tc"><button class="ddb" data-a="cod" aria-expanded="${!!b.co}">Mostrar: ${esc(lab)} ${b.co?"▴":"▾"}</button></div>`+(b.co?`<div class="ddp"><button class="ch ${!sel?"on":""}" data-a="cos" data-i="all">Todas</button>${outs.map(o=>`<button class="ch ${sel&&sel.includes(o.i)?"on":""}" data-a="cos" data-i="${o.i}">${esc(o.name)}</button>`).join("")}</div>`:"");
+  }
+  return h;
+};
+function ciDraw2(b,view){
+  if(!b.e.trim())return"";
+  const{outs,errs}=ciParse(b),full=view==="full",pres=view===true,big=outs.length>=5;
+  let list=(pres||full)&&b.cs&&b.cs.length?outs.filter(o=>b.cs.includes(o.i)):outs;if(!list.length)list=outs;
+  const pan=(pres||full)&&list.length>=7&&b.cm!=="one";
+  const used=new Set(),col=n=>{if(["nand","nor","xnor","xor"].includes(n.t))used.add(n.t.toUpperCase());if(n.t==="n")col(n.a);else if(n.c)n.c.forEach(col)};list.forEach(o=>col(o.ast));
+  let body="";
+  if(list.length&&pan){
+    const np=Math.ceil(list.length/5),sz=Math.ceil(list.length/np),ps=[];
+    for(let k=0;k<list.length;k+=sz)ps.push(list.slice(k,k+sz));
+    body=`<div class="cpn">${ps.map(g=>`<div class="cpp"><p class="cmp" style="margin:0 0 6px">${esc(g[0].name)}${g.length>1?" – "+esc(g[g.length-1].name):""}</p>${lgDrawMulti(g,"fit")}</div>`).join("")}</div>`;
+  }else if(list.length)body=lgDrawMulti(list,pres?(b.z===undefined?"fit":b.z):full?1:0);
+  return (pres&&outs.length?czb3(b,big,outs,pan):"")+body+(used.size?`<p class="cmp">Compuertas especiales en este circuito: ${[...used].join(", ")}</p>`:"")+errs.map(m=>`<p class="lgerr">${esc(m)}</p>`).join("");
+}
+let cvZ="fit";
+function cvApply(){
+  const box=$("#cvB"),svg=box.querySelector("svg");if(!svg||box.querySelector(".cpn"))return;
+  const vb=svg.viewBox.baseVal,W=vb.width,H=vb.height;
+  const w=cvZ==="fit"?Math.max(200,Math.min((box.clientWidth-34)/W,(box.clientHeight-34)/H)*W):W*cvZ;
+  svg.style.cssText=`width:${w}px;max-width:none;height:auto;display:block;margin:0 auto`;
+}
+function cvOpen(b){cvZ="fit";$("#cvT").textContent=b.t;$("#cvB").innerHTML=ciDraw2(b,"full");$("#cv").showModal();requestAnimationFrame(cvApply)}
+$("#cv").addEventListener("click",e=>{
+  const a=e.target.closest("[data-cv]");if(!a)return;const k=a.dataset.cv;
+  if(k==="x"){$("#cv").close();return}
+  if(k==="fit")cvZ="fit";else if(k==="1")cvZ=1;
+  else{const s=$("#cvB svg"),cur=cvZ==="fit"?s.getBoundingClientRect().width/s.viewBox.baseVal.width:cvZ;cvZ=Math.max(.2,Math.min(5,k==="p"?cur*1.3:cur/1.3))}
+  cvApply();
+});
+addEventListener("resize",()=>{if($("#cv").open&&cvZ==="fit")cvApply()});
+(()=>{let d=null;const B=$("#cvB");
+  B.addEventListener("pointerdown",e=>{if(e.pointerType!=="mouse")return;d={x:e.clientX,y:e.clientY,l:B.scrollLeft,t:B.scrollTop};B.setPointerCapture(e.pointerId);B.style.cursor="grabbing"});
+  B.addEventListener("pointermove",e=>{if(!d)return;B.scrollLeft=d.l-(e.clientX-d.x);B.scrollTop=d.t-(e.clientY-d.y)});
+  ["pointerup","pointercancel"].forEach(n=>B.addEventListener(n,()=>{d=null;B.style.cursor="grab"}));
+})();
 let qpRef=null;
 const qpGet=()=>qpRef.k==="o"?(qpRef.b.o[qpRef.i].c||""):((qpRef.b.ic||[])[qpRef.i]||"");
 function qpDraw(edit){
@@ -1627,8 +1833,27 @@ function prFit(){
   });
 }
 if(window.ResizeObserver)new ResizeObserver(()=>prFit()).observe($("#prB"));
-$("#prFS").onclick=()=>{const d=$("#pres");if(document.fullscreenElement){document.exitFullscreen();return}(d.requestFullscreen?d.requestFullscreen():Promise.reject()).catch(()=>toast("Aquí el navegador no permite pantalla completa. En PC prueba con F11."))};
-new MutationObserver(()=>{const d=$("#pres");if(d.open&&!document.fullscreenElement&&d.requestFullscreen)d.requestFullscreen().catch(()=>{});if(!d.open&&document.fullscreenElement)document.exitFullscreen().catch(()=>{})}).observe($("#pres"),{attributes:true,attributeFilter:["open"]});
+let prMt;function prMsg(t){const m=$("#prM");m.textContent=t;m.hidden=false;clearTimeout(prMt);prMt=setTimeout(()=>m.hidden=true,7000)}
+$("#prFS").onclick=async()=>{
+  const d=$("#pres");
+  if(document.fullscreenElement){try{await document.exitFullscreen()}catch(e){}d.classList.remove("zen");return}
+  if(d.classList.contains("zen")){d.classList.remove("zen");return}
+  let ok=false;
+  if(document.fullscreenEnabled&&d.requestFullscreen){try{await d.requestFullscreen();ok=true}catch(e){}}
+  d.classList.add("zen");
+  if(!ok)prMsg("Dentro de Claude el navegador no permite la pantalla completa real. Activé el modo sin menús. En PC también puedes usar F11 o el botón de expandir de la barra de arriba.");
+};
+$("#prZ").onclick=()=>$("#pres").classList.remove("zen");
+function prSplit(){
+  let u=null;try{u=localStorage.getItem("prSp")}catch(e){}
+  const auto=matchMedia("(hover:hover) and (min-width:560px) and (max-width:1150px)").matches,d=$("#pres");
+  d.classList.toggle("split",u===null?auto:u==="1");$("#prSp").classList.toggle("on",d.classList.contains("split"));
+}
+$("#prSp").onclick=()=>{const on=$("#pres").classList.contains("split");try{localStorage.setItem("prSp",on?"0":"1")}catch(e){}prSplit();prMsg(on?"Modo pantalla dividida apagado.":"Modo pantalla dividida activado: tablas y bloques más compactos para media pantalla.")};
+addEventListener("resize",prSplit);
+new MutationObserver(()=>{if($("#pres").open)prSplit()}).observe($("#pres"),{attributes:true,attributeFilter:["open"]});
+$("#pres").addEventListener("close",()=>{$("#pres").classList.remove("zen");$("#prM").hidden=true});
+new MutationObserver(()=>{const d=$("#pres");if(d.open&&document.fullscreenEnabled&&!document.fullscreenElement&&d.requestFullscreen)d.requestFullscreen().catch(()=>{});if(!d.open&&document.fullscreenElement)document.exitFullscreen().catch(()=>{})}).observe($("#pres"),{attributes:true,attributeFilter:["open"]});
 let oqRef=null;
 function oqOpen(b,i){oqRef={b,i};$("#oqT").textContent=b.o[i].n+" · lógica";$("#oqX").value=b.o[i].c||"";$("#oq").showModal()}
 $("#oqX").addEventListener("input",e=>{if(oqRef){oqRef.b.o[oqRef.i].c=e.target.value;saveD()}});
